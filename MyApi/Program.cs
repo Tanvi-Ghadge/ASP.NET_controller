@@ -1,6 +1,6 @@
 using MyApi.data;
 using Microsoft.EntityFrameworkCore;
-
+using MyApi.Mappings;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,6 +13,7 @@ builder.Services.AddDbContext<Dbcontext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection"));
 });
+builder.Services.AddAutoMapper(cfg => { }, typeof(EmployeeProfile).Assembly);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
