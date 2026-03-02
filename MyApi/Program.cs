@@ -13,6 +13,10 @@ builder.Services.AddDbContext<Dbcontext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection"));
 });
+builder.Services.AddDbContext<TeamsDbcontext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("connection"));
+});
 builder.Services.AddAutoMapper(cfg => { }, typeof(EmployeeProfile).Assembly);
 var app = builder.Build();
 

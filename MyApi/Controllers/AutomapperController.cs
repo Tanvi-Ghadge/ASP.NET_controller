@@ -27,6 +27,16 @@ namespace MyApi.Controllers
             var employeeDtos = _mapper.Map<List<Reademployeedto>>(employees);  //MappingOperationOptions the complete list of employees to a list of Reademployeedto using AutoMapper
             return Ok(employeeDtos);
         }
+
+        [HttpGet]
+        [Route("{pageNumber:int}/{pageSize:int}")]
+        public IActionResult PaginationGetemployees(int pageNumber, int pageSize)
+        {
+            var employees = dbContext.Employees.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+            var employeeDtos = _mapper.Map<List<Reademployeedto>>(employees);
+            return Ok(employeeDtos);
+        }
+
         [HttpGet]
         [Route("{id:guid}")]
         public IActionResult GetEmployeeById(Guid id)

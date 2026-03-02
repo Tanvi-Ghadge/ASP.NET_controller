@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MyApi.data;
 using MyApi.models;
 using MyApi.models.entities;
@@ -26,7 +27,7 @@ namespace MyApi.Controllers
                 Email = e.Email,
                 Phone = e.Phone,
                 Department = e.Department
-            }).ToList();
+            }).AsNoTracking().ToList();
             return Ok(employees);
         }
         [HttpGet]
@@ -69,7 +70,7 @@ namespace MyApi.Controllers
                 Phone = employee.Phone,
                 Department = employee.Department
             };
-            return Ok(readEmployee);
+            return CreatedAtAction(nameof(GetEmployeebyID), new { id = employee.Id }, readEmployee);
     }
     [HttpPut]
     [Route("{id:guid}")]
