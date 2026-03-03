@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using MyApi.data;
 using MyApi.Mappings;
 using MyApi.models;
+using Microsoft.EntityFrameworkCore;
 using MyApi.models.entities;
 using AutoMapper.QueryableExtensions;
 namespace MyApi.Controllers
+
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -21,27 +23,27 @@ namespace MyApi.Controllers
             this._mapper = _mapper;
         }
         [HttpGet]
-        public IActionResult GetEmployees()
+        public async Task<IActionResult> GetEmployees()
         {
-            var employees = dbContext.Employees.ToList();
-            var employeeDtos = _mapper.Map<List<Reademployeedto>>(employees);  //MappingOperationOptions the complete list of employees to a list of Reademployeedto using AutoMapper
-            return Ok(employeeDtos);
+            var employees = await dbContext.Employees.ProjectTo<Reademployeedto>(_mapper.ConfigurationProvider).ToListAsync();  //ProjectTo is an extension method provided by AutoMapper that allows you to project a queryable collection of entities (in this case, Employees) directly into a collection of DTOs (Reademployeedto) using the mapping configuration defined in AutoMapper.
+            // var employeeDtos = _mapper.Map<List<Reademployeedto>>(employees);  //MappingOperationOptions the complete list of employees to a list of Reademployeedto using AutoMapper
+            return Ok(employees);
         }
 
         [HttpGet]
         [Route("{pageNumber:int}/{pageSize:int}")]
-        public IActionResult PaginationGetemployees(int pageNumber, int pageSize)
+        public async Task<IActionResult> PaginationGetemployees(int pageNumber, int pageSize)
         {
-            var employees = dbContext.Employees.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+            var employees =await dbContext.Employees.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
             var employeeDtos = _mapper.Map<List<Reademployeedto>>(employees);
             return Ok(employeeDtos);
         }
 
         [HttpGet]
         [Route("{id:guid}")]
-        public IActionResult GetEmployeeById(Guid id)
+        public async Task<IActionResult> GetEmployeeById(Guid id)
         {
-            var employee = dbContext.Employees.Find(id);
+            var employee = await dbContext.Employees.FindAsync(id);
             if (employee == null)
             {
                 return NotFound();
@@ -50,26 +52,26 @@ namespace MyApi.Controllers
             return Ok(employeeDto);
         }
         [HttpPost]
-        public IActionResult CreateEmployee(Addemployeedto createEmployeeDto)
+        public async Task<IActionResult> CreateEmployee(Addemployeedto createEmployeeDto)
         {
             var employee = _mapper.Map<Employee>(createEmployeeDto);
-            dbContext.Employees.Add(employee);
-            dbContext.SaveChanges();
+            await dbContext.Employees.AddAsync(employee);
+            await dbContext.SaveChangesAsync();
             var employeeDto = _mapper.Map<Reademployeedto>(employee);
             return CreatedAtAction(nameof(GetEmployeeById), new { id = employee.Id }, employeeDto);
         }
         
         [HttpPut]
         [Route("{id:guid}")]
-        public IActionResult UpdateEmployee(Guid id, Updateemployeedto updateEmployeeDto)
+        public async Task<IActionResult> UpdateEmployee(Guid id, Updateemployeedto updateEmployeeDto)
         {
-            var employee = dbContext.Employees.Find(id);
+            var employee = await dbContext.Employees.FindAsync(id);
             if (employee == null)
             {
                 return NotFound();
             }
             _mapper.Map(updateEmployeeDto, employee);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             var employeeDto = _mapper.Map<Reademployeedto>(employee);
             return Ok(employeeDto);
         }
@@ -78,15 +80,15 @@ namespace MyApi.Controllers
         
         [HttpDelete]
         [Route("{id:guid}")]
-        public IActionResult DeleteEmployee(Guid id)
+        public async Task<IActionResult> DeleteEmployee(Guid id)
         {
-            var employee = dbContext.Employees.Find(id);
+            var employee = await dbContext.Employees.FindAsync(id);
             if (employee == null)
             {
                 return NotFound();
             }
             dbContext.Employees.Remove(employee);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return Ok("Employee deleted successfully.");
         }
     }

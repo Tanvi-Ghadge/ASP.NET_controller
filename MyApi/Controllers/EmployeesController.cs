@@ -18,23 +18,63 @@ namespace MyApi.Controllers
             this.dbContext = dbContext;
         }
         [HttpGet]
-        public IActionResult GetEmployees()
+        public async Task<IActionResult> GetEmployees()
         {
-            var employees = dbContext.Employees.Select(e => new Reademployeedto
+            var employees = await dbContext.Employees.Select(e => new Reademployeedto
             {
                 Id = e.Id,
                 Name = e.Name,
                 Email = e.Email,
                 Phone = e.Phone,
                 Department = e.Department
-            }).AsNoTracking().ToList();
+            }).AsNoTracking().ToListAsync();
             return Ok(employees);
         }
+
+        [HttpGet]
+        [Route("{department}")]
+        public async Task<IActionResult> GetEmployeesByDepartment(string department)
+        {
+            var employees = await dbContext.Employees.Where(e => e.Department == department).Select(e => new Reademployeedto
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Email = e.Email,
+                Phone = e.Phone,
+                Department = e.Department
+            }).AsNoTracking().ToListAsync();
+            return Ok(employees);
+        }
+
+        [HttpGet]
+        [Route("search/{name}/{department}")]
+        public async Task<IActionResult> SearchEmployeesByName(string name,string department)
+        {
+            var query=  dbContext.Employees.AsQueryable();
+            if (!string.IsNullOrEmpty(name))
+            {
+                query = query.Where(e => e.Name.Contains(name));
+            }
+            if (!string.IsNullOrEmpty(department))
+            {
+                query = query.Where(e => e.Department == department);
+            }
+            var employees = await query.Select(e => new Reademployeedto
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Email = e.Email,
+                Phone = e.Phone,
+                Department = e.Department
+            }).AsNoTracking().ToListAsync();
+            return Ok(employees);
+        }
+
         [HttpGet]
         [Route("{id:guid}")]
-        public IActionResult GetEmployeebyID(Guid id)
+        public async Task<IActionResult> GetEmployeebyID(Guid id)
         {
-            var employee = dbContext.Employees.Find(id);
+            var employee = await dbContext.Employees.FindAsync(id);
             if (employee == null)
             {
                 return NotFound();
@@ -50,7 +90,7 @@ namespace MyApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddEmployee(Addemployeedto addemployeedto)
+        public async Task<IActionResult> AddEmployee(Addemployeedto addemployeedto)
         {
             var employee = new Employee
             {
@@ -60,8 +100,8 @@ namespace MyApi.Controllers
                 Phone = addemployeedto.Phone,
                 Department = addemployeedto.Department
             };
-            dbContext.Employees.Add(employee);
-            dbContext.SaveChanges();
+            await dbContext.Employees.AddAsync(employee);
+            await dbContext.SaveChangesAsync();
             var readEmployee = new Reademployeedto
             {
                 Id = employee.Id,
@@ -74,9 +114,9 @@ namespace MyApi.Controllers
     }
     [HttpPut]
     [Route("{id:guid}")]
-    public IActionResult UpdateEmployee(Guid id, Updateemployeedto updateemployeedto)
+    public async Task<IActionResult> UpdateEmployee(Guid id, Updateemployeedto updateemployeedto)
     {
-        var employee = dbContext.Employees.Find(id);
+        var employee = await dbContext.Employees.FindAsync(id);
         if (employee == null)
         {
             return NotFound();
@@ -85,7 +125,7 @@ namespace MyApi.Controllers
         employee.Email = updateemployeedto.Email;
         employee.Phone = updateemployeedto.Phone;
         employee.Department = updateemployeedto.Department;
-        dbContext.SaveChanges();
+        await dbContext.SaveChangesAsync();
         var readEmployee = new Reademployeedto
         {
             Id = employee.Id,
@@ -98,23 +138,23 @@ namespace MyApi.Controllers
     }
     [HttpDelete]
     [Route("{id:guid}")]
-    public IActionResult DeleteEmployee(Guid id)
+    public async Task<IActionResult> DeleteEmployee(Guid id)
     {
-        var employee = dbContext.Employees.Find(id);
+        var employee = await dbContext.Employees.FindAsync(id);
         if (employee == null)
         {
             return NotFound();
         }
         dbContext.Employees.Remove(employee);
-        dbContext.SaveChanges();
+        await dbContext.SaveChangesAsync();
         return Ok(new { message = "Employee deleted successfully." });
     }
 
     [HttpPatch]
     [Route("{id:guid}")]
-    public IActionResult PatchEmployee(Guid id, Updateemployeedto updateemployeedto)
+    public async Task<IActionResult> PatchEmployee(Guid id, Updateemployeedto updateemployeedto)
     {
-        var employee = dbContext.Employees.Find(id);
+        var employee = await dbContext.Employees.FindAsync(id);
         if (employee == null)
         {
             return NotFound(new { message = "Employee not found." });
@@ -135,7 +175,7 @@ namespace MyApi.Controllers
         {
             employee.Department = updateemployeedto.Department;
         }
-        dbContext.SaveChanges();
+        await dbContext.SaveChangesAsync();
         var readEmployee = new Reademployeedto
         {
             Id = employee.Id,
