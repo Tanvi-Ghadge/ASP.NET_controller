@@ -17,6 +17,7 @@ public class Dbcontext : DbContext
     public DbSet<EmployeeProfile> EmployeeProfiles { get; set; }
     public DbSet<Projects> Projects { get; set; }
     public DbSet<EmployeeProjects> EmployeeProjects { get; set; }
+    public DbSet<Refreshtoken> RefreshTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

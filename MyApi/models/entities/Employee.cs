@@ -18,6 +18,8 @@ public class Employee
     public required string Name { get; set; }
 
     public required string Email { get; set; }
+    public required string PasswordHash { get; set; }
+    public string role { get; set; } = "Employee";
 
     public decimal Salary { get; set; }
 
@@ -34,5 +36,6 @@ public class Employee
     public EmployeeProfile? Profile { get; set; }
 
     public List<EmployeeProjects> EmployeeProjects { get; set; } = new();
+    public List<Refreshtoken> RefreshTokens { get; set; } = new();
 }
 

@@ -30,6 +30,15 @@ public class EmployeeRepository : Iemployeerepository
             .FirstOrDefaultAsync(e => e.Id == id);
     }
 
+    public async Task<Employee?> GetByEmailAsync(string email)
+    {
+        return await dbcontext.Employees
+            .Include(e => e.Department)
+            .Include(e => e.Manager)
+            .AsNoTracking()
+            .FirstOrDefaultAsync(e => e.Email == email);
+    }
+
     public async Task AddAsync(Employee employee)
     {
         await dbcontext.Employees.AddAsync(employee);

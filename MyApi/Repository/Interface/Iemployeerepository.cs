@@ -7,6 +7,7 @@ public interface Iemployeerepository
     Task<List<Employee>> GetAllAsync();
 
     Task<Employee?> GetByIdAsync(int id);
+    Task<Employee?> GetByEmailAsync(string email);
 
     Task AddAsync(Employee employee);
 

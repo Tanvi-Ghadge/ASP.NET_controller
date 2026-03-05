@@ -57,18 +57,24 @@ public class EmployeeService : Iemployeeservice
             Email = dto.Email,
             Salary = dto.Salary,
             DepartmentId = dto.DepartmentId,
-            ManagerId = dto.ManagerId
+            ManagerId = dto.ManagerId,
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password)
         };
 
         await _repository.AddAsync(employee);
         await _repository.SaveAsync();
 
+        
+        var created = await _repository.GetByIdAsync(employee.Id);
+
         return new Reademployeedto
         {
-            Id = employee.Id,
-            Name = employee.Name,
-            Email = employee.Email,
-            Salary = employee.Salary
+            Id = created!.Id,
+            Name = created.Name,
+            Email = created.Email,
+            Salary = created.Salary,
+            DepartmentName = created.Department!.Name,
+            ManagerName = created.Manager?.Name
         };
     }
 

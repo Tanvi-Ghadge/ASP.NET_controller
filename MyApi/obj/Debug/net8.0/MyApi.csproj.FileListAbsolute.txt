@@ -148,3 +148,5 @@ C:\Users\HP\Desktop\asp.net\MyApi\obj\Debug\net8.0\MyApi.sourcelink.json
 C:\Users\HP\Desktop\asp.net\MyApi\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\HP\Desktop\asp.net\MyApi\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\HP\Desktop\asp.net\MyApi\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\HP\Desktop\asp.net\MyApi\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\HP\Desktop\asp.net\MyApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
