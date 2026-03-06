@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
-
+using Hangfire;
+using Hangfire.SqlServer;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -48,11 +49,18 @@ builder.Services.AddDbContext<Dbcontext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection")).LogTo(Console.WriteLine, LogLevel.Information)
            .EnableSensitiveDataLogging();
 });
+builder.Services.AddHangfire(config =>
+    config.UseSqlServerStorage(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddHangfireServer();
+
 builder.Services.AddScoped<Iemployeerepository, EmployeeRepository>();
 builder.Services.AddScoped<Iemployeeservice, EmployeeService>();
 builder.Services.AddScoped<Iauthservice, AuthService>();
 builder.Services.AddScoped<Itokenservice, TokenService>();
 builder.Services.AddScoped<Irefreshtokenrepository, Refreshtokenrepository>();
+builder.Services.AddScoped<Iemailservice, Emailservice>();
 builder.Services.AddMemoryCache();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>
@@ -94,7 +102,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseHangfireDashboard();
 app.MapControllers();
 
 app.Run();

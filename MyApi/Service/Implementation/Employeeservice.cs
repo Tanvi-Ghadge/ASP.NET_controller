@@ -6,6 +6,7 @@ using AutoMapper;
 using MyApi.Mappings;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.Caching.Memory;
+using Hangfire;
 namespace MyApi.Service.Implementation;
 public class EmployeeService : Iemployeeservice
 {
@@ -77,9 +78,11 @@ public async Task<List<Reademployeedto>> GetAllEmployeesAsync()
         };
 
         await _repository.AddAsync(employee);
-        _cache.Remove(EmployeesCacheKey);
+        
         await _repository.SaveAsync();
-
+        _cache.Remove(EmployeesCacheKey);
+        BackgroundJob.Enqueue<Iemailservice>(
+    x => x.SendWelcomeEmail(employee.Email, employee.Name));
         
         var created = await _repository.GetByIdAsync(employee.Id);
 
@@ -104,8 +107,9 @@ public async Task<List<Reademployeedto>> GetAllEmployeesAsync()
         _mapper.Map(dto, employee);
 
         _repository.Update(employee);
-        _cache.Remove(EmployeesCacheKey);
+        
         await _repository.SaveAsync();
+        _cache.Remove(EmployeesCacheKey);
 
         return _mapper.Map<Reademployeedto>(employee);
         
@@ -119,8 +123,9 @@ public async Task<List<Reademployeedto>> GetAllEmployeesAsync()
             return false;
 
         _repository.Delete(employee);
-        _cache.Remove(EmployeesCacheKey);
+        
         await _repository.SaveAsync();
+        _cache.Remove(EmployeesCacheKey);
 
         return true;
     }
