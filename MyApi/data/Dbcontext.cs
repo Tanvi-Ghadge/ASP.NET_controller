@@ -90,6 +90,10 @@ public class Dbcontext : DbContext
     modelBuilder.Entity<Projects>()
         .Property(p => p.Budget)
         .HasPrecision(12, 2);
+
+    modelBuilder.Entity<Employee>()
+        .HasIndex(e => e.Email)
+        .IsUnique();
     }
 
 }

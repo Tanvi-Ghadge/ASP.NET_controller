@@ -1,4 +1,5 @@
 using BCrypt.Net;
+using Microsoft.EntityFrameworkCore;
 using MyApi.DTO.Employee;
 using MyApi.models.entities;
 using MyApi.Repository.Interface;
@@ -21,6 +22,9 @@ public class AuthService : Iauthservice
 
     public async Task Register(Registerdto dto)
     {
+        var existingUser = await _employeeRepo.GetByEmailAsync(dto.Email);
+        if (existingUser != null)
+            throw new Exception("Email already in use");
         var hash = BCrypt.Net.BCrypt.HashPassword(dto.Password);
 
         var employee = new Employee
@@ -31,9 +35,18 @@ public class AuthService : Iauthservice
             role = dto.Role,
             DepartmentId = dto.DepartmentId
         };
-
-        await _employeeRepo.AddAsync(employee);
-        await _employeeRepo.SaveAsync();
+        
+        
+        try
+        {
+            await _employeeRepo.AddAsync(employee);
+            await _employeeRepo.SaveAsync();
+        }
+        catch (DbUpdateException)
+        {
+            
+            throw new Exception("Email already in use");
+        }
     }
 
     public async Task<(string accessToken, string refreshToken)> Login(Logindto dto)
