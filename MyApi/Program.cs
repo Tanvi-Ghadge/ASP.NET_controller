@@ -45,13 +45,15 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddDbContext<Dbcontext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection")).LogTo(Console.WriteLine, LogLevel.Information)
+           .EnableSensitiveDataLogging();
 });
 builder.Services.AddScoped<Iemployeerepository, EmployeeRepository>();
 builder.Services.AddScoped<Iemployeeservice, EmployeeService>();
 builder.Services.AddScoped<Iauthservice, AuthService>();
 builder.Services.AddScoped<Itokenservice, TokenService>();
 builder.Services.AddScoped<Irefreshtokenrepository, Refreshtokenrepository>();
+builder.Services.AddMemoryCache();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>
 {
