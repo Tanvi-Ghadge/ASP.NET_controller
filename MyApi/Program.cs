@@ -11,6 +11,9 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using Hangfire;
 using Hangfire.SqlServer;
+using Microsoft.AspNetCore.RateLimiting;
+using System.Threading.RateLimiting;
+// using MyApi.Middleware;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -54,13 +57,28 @@ builder.Services.AddHangfire(config =>
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddHangfireServer();
-
+builder.Services.AddRateLimiter(options =>
+{
+    options.AddFixedWindowLimiter("loginpolicy", limiterOptions =>
+    {
+        limiterOptions.PermitLimit = 5;
+        limiterOptions.Window = TimeSpan.FromSeconds(60);
+        limiterOptions.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        limiterOptions.QueueLimit = 2;
+    });
+});
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = new SnakeCase();
+    });
 builder.Services.AddScoped<Iemployeerepository, EmployeeRepository>();
 builder.Services.AddScoped<Iemployeeservice, EmployeeService>();
 builder.Services.AddScoped<Iauthservice, AuthService>();
 builder.Services.AddScoped<Itokenservice, TokenService>();
 builder.Services.AddScoped<Irefreshtokenrepository, Refreshtokenrepository>();
 builder.Services.AddScoped<Iemailservice, Emailservice>();
+builder.Services.AddScoped<IHmacservice, Hmacservice>();
 builder.Services.AddMemoryCache();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>
@@ -84,10 +102,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 });
 
 builder.Services.AddAuthorization();
-// builder.Services.AddDbContext<TeamsDbcontext>(options =>
-// {
-//     options.UseSqlServer(builder.Configuration.GetConnectionString("connection"));
-// });
+
 builder.Services.AddAutoMapper(cfg => { }, typeof(EmployeeProfile).Assembly);
 var app = builder.Build();
 
@@ -100,8 +115,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<InputSanitizationMiddleware>();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseMiddleware<HmacMiddleware>();
 app.UseHangfireDashboard();
 app.MapControllers();
 

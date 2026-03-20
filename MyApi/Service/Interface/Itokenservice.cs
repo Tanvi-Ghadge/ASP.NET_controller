@@ -5,6 +5,8 @@ namespace MyApi.Service.Interface;
 public interface Itokenservice
 {
     string CreateAccessToken(Employee employee);
-
-    Refreshtoken GenerateRefreshToken();
+    string GenerateRefreshToken();
+    string HashToken(string token);
+    Refreshtoken CreateRefreshToken(Employee employee, string rawToken);
+    
 }

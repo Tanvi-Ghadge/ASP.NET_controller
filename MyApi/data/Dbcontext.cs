@@ -87,15 +87,20 @@ public class Dbcontext : DbContext
         .Property(e => e.Salary)
         .HasPrecision(10, 2);
 
-    modelBuilder.Entity<Projects>()
-        .Property(p => p.Budget)
-        .HasPrecision(12, 2);
+        modelBuilder.Entity<Projects>()
+            .Property(p => p.Budget)
+            .HasPrecision(12, 2);
 
-    modelBuilder.Entity<Employee>()
-        .HasIndex(e => e.Email)
-        .IsUnique();
+        modelBuilder.Entity<Employee>()
+            .HasIndex(e => e.Email)
+            .IsUnique();
+
+        modelBuilder.Entity<Employee>()
+        .Property(e => e.Name)
+        .IsRequired()
+        .HasMaxLength(100);
     }
-
+    
 }
 
 

@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using MyApi.Service.Interface;
 using Microsoft.IdentityModel.Tokens;
@@ -40,12 +41,34 @@ public class TokenService : Itokenservice
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    public Refreshtoken GenerateRefreshToken()
+    public string GenerateRefreshToken()
+    {
+        var bytes = new byte[64];
+
+        using var rng = RandomNumberGenerator.Create();
+        rng.GetBytes(bytes);
+
+        return Convert.ToBase64String(bytes);
+    }
+
+    public string HashToken(string token)
+    {
+        using var sha256 = SHA256.Create();
+        var bytes = Encoding.UTF8.GetBytes(token);
+        var hash = sha256.ComputeHash(bytes);
+        return Convert.ToBase64String(hash);
+    }
+
+    public Refreshtoken CreateRefreshToken(Employee employee, string rawToken)
     {
         return new Refreshtoken
         {
-            Token = Guid.NewGuid().ToString(),
-            Expires = DateTime.UtcNow.AddDays(7)
+            Token = HashToken(rawToken),
+            EmployeeId = employee.Id,
+            Expires = DateTime.UtcNow.AddDays(7),
+            IsRevoked = false
         };
     }
+
+    
 }

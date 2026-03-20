@@ -6,8 +6,10 @@ namespace MyApi.Service.Interface;
 public interface Iemployeeservice
 {
         Task<List<Reademployeedto>> GetAllEmployeesAsync();
+        Task<object> GetEmployees(EmployeeQueryDto query);
 
     Task<Reademployeedto?> GetEmployeeByIdAsync(int id);
+    
 
     Task<Reademployeedto> CreateEmployeeAsync(Createemployeedto dto);
 

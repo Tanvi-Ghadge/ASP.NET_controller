@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace MyApi.DTO.Employee;
 
 public record class Reademployeedto
@@ -8,4 +10,5 @@ public record class Reademployeedto
     public decimal Salary { get; set; }
     public string DepartmentName { get; set; } = string.Empty;
     public string? ManagerName { get; set; }
+   
 }

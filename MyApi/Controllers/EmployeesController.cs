@@ -18,12 +18,19 @@ public class EmployeesController : ControllerBase
 
     // Any authenticated user can view employees
     [HttpGet]
-    public async Task<IActionResult> GetEmployees()
+    public async Task<IActionResult> GetEmployees([FromQuery] EmployeeQueryDto query)
     {
-        var employees = await _service.GetAllEmployeesAsync();
-        return Ok(employees);
+        var result = await _service.GetEmployees(query);
+        return Ok(result);
     }
 
+    [HttpGet("all")]
+    public async Task<IActionResult> GetAllEmployees()
+    {
+        var result = await _service.GetAllEmployeesAsync();
+        return Ok(result);
+    }
+    // Any authenticated user can view employees by id
     [HttpGet("{id}")]
     public async Task<IActionResult> GetEmployee(int id)
     {
@@ -60,6 +67,7 @@ public class EmployeesController : ControllerBase
 
     // Only Admin can delete
     [Authorize(Roles = "Admin")]
+    [RequireHmac]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteEmployee(int id)
     {

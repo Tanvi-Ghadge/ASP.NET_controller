@@ -2,14 +2,6 @@ using System;
 
 namespace MyApi.models.entities;
 
-// public class Employee
-// {
-//     public Guid Id { get; set; }
-//     public required string Name { get; set; }
-//     public required string Email { get; set; }
-//     public string? Phone { get; set; }
-//     public string? Department { get; set; }
-// }
 
 public class Employee
 {
@@ -22,12 +14,12 @@ public class Employee
     public string role { get; set; } = "Employee";
 
     public decimal Salary { get; set; }
-
+    public string HmacSecret { get; set; } = null!;
     public int DepartmentId { get; set; }
 
     public int? ManagerId { get; set; }
-    
-     public Department? Department { get; set; }
+
+    public Department? Department { get; set; }
 
     public Employee? Manager { get; set; }
 

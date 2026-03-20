@@ -30,7 +30,9 @@
     <Folder Include="data\" />
     <Folder Include="DTO\" />
     <Folder Include="DTO\Employee\" />
+    <Folder Include="Helpers\" />
     <Folder Include="Mappings\" />
+    <Folder Include="Middleware\" />
     <Folder Include="Repository\" />
     <Folder Include="Repository\Implementation\" />
     <Folder Include="Repository\Interface\" />

@@ -4,23 +4,27 @@ using MyApi.DTO.Employee;
 using MyApi.models.entities;
 using MyApi.Repository.Interface;
 using MyApi.Service.Interface;
+
 public class AuthService : Iauthservice
 {
     private readonly Iemployeerepository _employeeRepo;
     private readonly Irefreshtokenrepository _refreshRepo;
     private readonly Itokenservice _tokenService;
+    private readonly IHmacservice _hmacservice;
 
     public AuthService(
         Iemployeerepository employeeRepo,
         Irefreshtokenrepository refreshRepo,
-        Itokenservice tokenService)
+        Itokenservice tokenService,
+        IHmacservice hmacservice)
     {
         _employeeRepo = employeeRepo;
         _refreshRepo = refreshRepo;
         _tokenService = tokenService;
+        _hmacservice = hmacservice;
     }
 
-    public async Task Register(Registerdto dto)
+    public async Task<(string accessToken, string rawrefreshToken)> Register(Registerdto dto)
     {
         var existingUser = await _employeeRepo.GetByEmailAsync(dto.Email);
         if (existingUser != null)
@@ -33,23 +37,26 @@ public class AuthService : Iauthservice
             Email = dto.Email,
             PasswordHash = hash,
             role = dto.Role,
+            HmacSecret = _hmacservice.GenerateHmacSecret(),
             DepartmentId = dto.DepartmentId
         };
+        await _employeeRepo.AddAsync(employee);
+        await _employeeRepo.SaveAsync();
+        var accessToken = _tokenService.CreateAccessToken(employee);
+
+        var rawrefreshToken = _tokenService.GenerateRefreshToken();
+        var entity= _tokenService.CreateRefreshToken(employee, rawrefreshToken);
+
+        
+
+        await _refreshRepo.Add(entity);
+        
+        return (accessToken, rawrefreshToken);
         
         
-        try
-        {
-            await _employeeRepo.AddAsync(employee);
-            await _employeeRepo.SaveAsync();
-        }
-        catch (DbUpdateException)
-        {
-            
-            throw new Exception("Email already in use");
-        }
     }
 
-    public async Task<(string accessToken, string refreshToken)> Login(Logindto dto)
+    public async Task<(string accessToken, string rawrefreshToken)> Login(Logindto dto)
     {
         var user = await _employeeRepo.GetByEmailAsync(dto.Email);
 
@@ -59,27 +66,39 @@ public class AuthService : Iauthservice
 
         var accessToken = _tokenService.CreateAccessToken(user);
 
-        var refreshToken = _tokenService.GenerateRefreshToken();
+        var rawrefreshToken = _tokenService.GenerateRefreshToken();
+        var entity= _tokenService.CreateRefreshToken(user, rawrefreshToken);
 
-        refreshToken.EmployeeId = user.Id;
+        
 
-        await _refreshRepo.Add(refreshToken);
+        await _refreshRepo.Add(entity);
 
-        return (accessToken, refreshToken.Token);
+        return (accessToken, rawrefreshToken);
     }
 
-    public async Task<string?> RefreshToken(string token)
+    public async Task<(string accessToken, string rawrefreshToken)> RefreshToken(string token)
     {
-        var storedToken = await _refreshRepo.GetToken(token);
+        var hashedToken = _tokenService.HashToken(token);
+        var storedToken = await _refreshRepo.GetToken(hashedToken);
 
+        
         if (storedToken == null || storedToken.Expires < DateTime.UtcNow)
-            return null;
+            throw new Exception("Invalid refresh token");
+        storedToken.IsRevoked = true;
 
         var employee = await _employeeRepo.GetByIdAsync(storedToken.EmployeeId);
 
         if (employee == null)
-            return null;
+            throw new Exception("Employee not found");
 
-        return _tokenService.CreateAccessToken(employee);
+        var accessToken = _tokenService.CreateAccessToken(employee);
+        var rawrefreshToken = _tokenService.GenerateRefreshToken();
+        var newRefreshTokenEntity = _tokenService.CreateRefreshToken(employee, rawrefreshToken);
+
+        await _refreshRepo.Add(newRefreshTokenEntity);
+
+        return (accessToken, rawrefreshToken);
     }
+
+    
 }

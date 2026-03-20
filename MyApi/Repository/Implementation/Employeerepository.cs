@@ -21,6 +21,14 @@ public class EmployeeRepository : Iemployeerepository
             .ToListAsync();
     }
 
+    public IQueryable<Employee> GetAll()
+    {
+        return dbcontext.Employees
+            .Include(e => e.Department)
+            .Include(e => e.Manager)
+            .AsNoTracking();
+    }
+
     public async Task<Employee?> GetByIdAsync(int id)
     {
         return await dbcontext.Employees
@@ -29,7 +37,14 @@ public class EmployeeRepository : Iemployeerepository
             .AsNoTracking()
             .FirstOrDefaultAsync(e => e.Id == id);
     }
-
+    public async Task<List<Employee>> GetByDeptIdAsync(int DeptId)
+    {
+        return await dbcontext.Employees
+            .Where(e => e.DepartmentId == DeptId)
+            .Include(e => e.Department)
+            .AsNoTracking()
+            .ToListAsync();
+    }
     public async Task<Employee?> GetByEmailAsync(string email)
     {
         return await dbcontext.Employees

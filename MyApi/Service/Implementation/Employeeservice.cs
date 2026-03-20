@@ -7,6 +7,7 @@ using MyApi.Mappings;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.Caching.Memory;
 using Hangfire;
+using Microsoft.EntityFrameworkCore;
 namespace MyApi.Service.Implementation;
 public class EmployeeService : Iemployeeservice
 {
@@ -47,6 +48,67 @@ public async Task<List<Reademployeedto>> GetAllEmployeesAsync()
     return employees ?? new List<Reademployeedto>();
 }
 
+    public async Task<object> GetEmployees(EmployeeQueryDto query)
+    {
+        var employees = _repository.GetAll();
+
+        // SEARCH
+        if (!string.IsNullOrWhiteSpace(query.Search))
+        {
+            var search = query.Search.Trim();
+            employees = employees.Where(e =>
+                e.Name.Contains(search) ||
+                e.Email.Contains(search));
+        }
+
+        // FILTER
+        if (query.DepartmentId.HasValue)
+        {
+            employees = employees.Where(e => e.DepartmentId == query.DepartmentId.Value);
+        }
+
+        if (query.MinSalary.HasValue)
+        {
+            employees = employees.Where(e => e.Salary >= query.MinSalary.Value);
+        }
+
+        // SORT
+        employees = query.SortBy?.ToLower() switch
+        {
+            "salary" => query.Desc ? employees.OrderByDescending(e => e.Salary) : employees.OrderBy(e => e.Salary),
+            "name" => query.Desc ? employees.OrderByDescending(e => e.Name) : employees.OrderBy(e => e.Name),
+            _ => employees.OrderBy(e => e.Id)
+        };
+
+        var totalCount = await employees.CountAsync();
+
+        var page = query.Page < 1 ? 1 : query.Page;
+        var pageSize = query.PageSize < 1 ? 1 : (query.PageSize > 100 ? 100 : query.PageSize);
+
+        // PAGINATION + PROJECTION
+        var data = await employees
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .Select(e => new Reademployeedto
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Email = e.Email,
+                DepartmentName = e.Department != null ? e.Department.Name : string.Empty,
+                Salary = e.Salary,
+                ManagerName = e.Manager != null ? e.Manager.Name : null
+            })
+            .ToListAsync();
+
+        return new
+        {
+            totalCount,
+            page,
+            pageSize,
+            data
+        };
+    }
+    
     public async Task<Reademployeedto?> GetEmployeeByIdAsync(int id)
     {
         var employee = await _repository.GetByIdAsync(id);
@@ -54,15 +116,7 @@ public async Task<List<Reademployeedto>> GetAllEmployeesAsync()
         if (employee == null)
             return null;
 
-        return new Reademployeedto
-        {
-            Id = employee.Id,
-            Name = employee.Name,
-            Email = employee.Email,
-            Salary = employee.Salary,
-            DepartmentName = employee.Department!.Name,
-            ManagerName = employee.Manager?.Name
-        };
+        return _mapper.Map<Reademployeedto>(employee);
     }
 
     public async Task<Reademployeedto> CreateEmployeeAsync(Createemployeedto dto)
