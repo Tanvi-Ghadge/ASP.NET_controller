@@ -13,7 +13,12 @@ using Hangfire;
 using Hangfire.SqlServer;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
-// using MyApi.Middleware;
+using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
+using Serilog;
+using MyApi.Middleware;
+using System.Data;
+using Microsoft.Data.SqlClient;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -47,31 +52,89 @@ builder.Services.AddSwaggerGen(c =>
         { jwtSecurityScheme, Array.Empty<string>() }
     });
 });
+
+
+//gzip compression
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true;
+
+    // Add Gzip
+    options.Providers.Add<GzipCompressionProvider>();
+
+    // Ensure JSON is included
+    options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        new[] { "application/json" });
+});
+builder.Services.Configure<GzipCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Optimal; // better compression
+});
+
+
+//dbcontext
 builder.Services.AddDbContext<Dbcontext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection")).LogTo(Console.WriteLine, LogLevel.Information)
            .EnableSensitiveDataLogging();
 });
+
+
+//hangfire for background jobs
 builder.Services.AddHangfire(config =>
     config.UseSqlServerStorage(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddHangfireServer();
+
+
+//rate-limiting
 builder.Services.AddRateLimiter(options =>
 {
-    options.AddFixedWindowLimiter("loginpolicy", limiterOptions =>
-    {
-        limiterOptions.PermitLimit = 5;
-        limiterOptions.Window = TimeSpan.FromSeconds(60);
-        limiterOptions.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
-        limiterOptions.QueueLimit = 2;
-    });
+    options.AddPolicy("loginpolicy", context =>
+{
+    var ip = context.Connection.RemoteIpAddress?.ToString();
+
+    return RateLimitPartition.GetFixedWindowLimiter(
+        ip!,
+        _ => new FixedWindowRateLimiterOptions
+        {
+            PermitLimit = 5,
+            Window = TimeSpan.FromMinutes(1),
+            QueueLimit = 0
+        });
 });
+});
+
+
+//snake-casing for JSON
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.PropertyNamingPolicy = new SnakeCase();
     });
+
+// logging with serilog
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .WriteTo.Console(
+        outputTemplate: "{Timestamp:HH:mm:ss} [{Level}] [TraceId: {TraceId}] {Message}{NewLine}{Exception}")
+    .WriteTo.File(
+        "logs/app.log",
+        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level}] [TraceId: {TraceId}] {Message}{NewLine}{Exception}")
+    .CreateLogger();
+
+builder.Host.UseSerilog();
+
+//connection for dapper
+builder.Services.AddScoped<IDbConnection>(sp =>
+    new SqlConnection(
+        sp.GetRequiredService<IConfiguration>()
+          .GetConnectionString("defaultconnection")
+    ));
+
+    
 builder.Services.AddScoped<Iemployeerepository, EmployeeRepository>();
 builder.Services.AddScoped<Iemployeeservice, EmployeeService>();
 builder.Services.AddScoped<Iauthservice, AuthService>();
@@ -79,7 +142,11 @@ builder.Services.AddScoped<Itokenservice, TokenService>();
 builder.Services.AddScoped<Irefreshtokenrepository, Refreshtokenrepository>();
 builder.Services.AddScoped<Iemailservice, Emailservice>();
 builder.Services.AddScoped<IHmacservice, Hmacservice>();
+builder.Services.AddScoped<IDapperrepo, DapperEmployeeRepository>();
+builder.Services.AddScoped<IDapperservice, DapperEmployeeService>();
 builder.Services.AddMemoryCache();
+
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>
 {
@@ -113,13 +180,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMiddleware<Traceidmiddleware>();
+app.UseMiddleware<Exceptionmiddleware>();
 app.UseHttpsRedirection();
 app.UseMiddleware<InputSanitizationMiddleware>();
-
+app.UseRateLimiter();
+app.UseResponseCompression();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.UseMiddleware<HmacMiddleware>();
 app.UseHangfireDashboard();
 app.MapControllers();

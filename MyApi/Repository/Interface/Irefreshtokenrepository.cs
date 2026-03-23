@@ -5,7 +5,7 @@ namespace MyApi.Repository.Interface;
 
 public interface Irefreshtokenrepository
 {
-    Task Add(Refreshtoken token);
+    Task Add(Refreshtoken tokens);
 
     Task<Refreshtoken?> GetToken(string token);
 }

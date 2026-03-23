@@ -1,0 +1,1051 @@
+2026-03-23 13:11:15.448 +05:30 [INF] Start installing Hangfire SQL objects...
+2026-03-23 13:11:17.099 +05:30 [INF] Hangfire SQL objects installed.
+2026-03-23 13:11:17.243 +05:30 [INF] User profile is available. Using 'C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 13:11:17.349 +05:30 [INF] Now listening on: http://localhost:5062
+2026-03-23 13:11:17.354 +05:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-23 13:11:17.354 +05:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-23 13:11:17.354 +05:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-23 13:11:17.365 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-23 13:11:17.365 +05:30 [INF] Hosting environment: Development
+2026-03-23 13:11:17.365 +05:30 [INF] Content root path: C:\Users\HP\Desktop\asp.net\MyApi
+2026-03-23 13:11:17.519 +05:30 [INF] Server laptop-2j11tsn1:56580:8a5ee4fc successfully announced in 154.9358 ms
+2026-03-23 13:11:17.524 +05:30 [INF] Server laptop-2j11tsn1:56580:8a5ee4fc is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-23 13:11:17.560 +05:30 [INF] Server laptop-2j11tsn1:56580:8a5ee4fc all the dispatchers started
+2026-03-23 13:11:17.950 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger - null null
+2026-03-23 13:11:18.066 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger - 301 null null 115.9262ms
+2026-03-23 13:11:18.083 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/index.html - null null
+2026-03-23 13:11:18.335 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/index.html - 200 null text/html;charset=utf-8 253.1713ms
+2026-03-23 13:11:18.346 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui.css - null null
+2026-03-23 13:11:18.359 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui-bundle.js - null null
+2026-03-23 13:11:18.361 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui-standalone-preset.js - null null
+2026-03-23 13:11:18.375 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-23 13:11:18.378 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/_framework/aspnetcore-browser-refresh.js - 200 16547 application/javascript; charset=utf-8 2.5812ms
+2026-03-23 13:11:18.383 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-03-23 13:11:18.383 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-03-23 13:11:18.385 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui.css - 200 152034 text/css 39.42ms
+2026-03-23 13:11:18.385 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 24.3384ms
+2026-03-23 13:11:18.405 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-03-23 13:11:18.405 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 46.2759ms
+2026-03-23 13:11:18.503 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/v1/swagger.json - null null
+2026-03-23 13:11:18.701 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 197.7908ms
+2026-03-23 13:11:34.817 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5062/api/Auth/login - application/json 57
+2026-03-23 13:11:34.832 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-03-23 13:11:35.194 +05:30 [INF] Executing endpoint 'AuthController.Login (MyApi)'
+2026-03-23 13:11:35.241 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto) on controller AuthController (MyApi).
+2026-03-23 13:11:36.268 +05:30 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-03-23 13:11:37.254 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[@__email_0='user56@gmail.com' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0
+2026-03-23 13:11:38.032 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@p0='1015', @p1='2026-03-30T07:41:37.7719829Z', @p2='False', @p3='1uT/EaWLOOqFr+Lhgcx0SOjuD8yV53DWc6YYTq3WaNc=' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2026-03-23 13:11:38.075 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 13:11:38.125 +05:30 [INF] Executed action AuthController.Login (MyApi) in 2879.3154ms
+2026-03-23 13:11:38.125 +05:30 [INF] Executed endpoint 'AuthController.Login (MyApi)'
+2026-03-23 13:11:38.136 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5062/api/Auth/login - 200 null application/json; charset=utf-8 3319.1935ms
+2026-03-23 13:11:59.600 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/Employees/20 - null null
+2026-03-23 13:11:59.670 +05:30 [INF] Executing endpoint 'EmployeesController.GetEmployee (MyApi)'
+2026-03-23 13:11:59.680 +05:30 [INF] Route matched with {action = "GetEmployee", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployee(Int32) on controller EmployeesController (MyApi).
+2026-03-23 13:11:59.786 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-23 13:11:59.789 +05:30 [INF] GetEmployee called (id=20).
+2026-03-23 13:11:59.849 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__id_0='20'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Id] = @__id_0
+2026-03-23 13:11:59.851 +05:30 [WRN] GetEmployee not found (id=20).
+2026-03-23 13:11:59.853 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2026-03-23 13:11:59.887 +05:30 [INF] Executed action EmployeesController.GetEmployee (MyApi) in 207.0564ms
+2026-03-23 13:11:59.887 +05:30 [INF] Executed endpoint 'EmployeesController.GetEmployee (MyApi)'
+2026-03-23 13:11:59.888 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/Employees/20 - 404 null application/problem+json; charset=utf-8 287.3737ms
+2026-03-23 13:16:50.409 +05:30 [INF] Server laptop-2j11tsn1:56580:8a5ee4fc caught stopping signal...
+2026-03-23 13:16:50.409 +05:30 [INF] Application is shutting down...
+2026-03-23 13:16:50.954 +05:30 [INF] Server laptop-2j11tsn1:56580:8a5ee4fc caught stopped signal...
+2026-03-23 13:16:51.139 +05:30 [INF] Server laptop-2j11tsn1:56580:8a5ee4fc All dispatchers stopped
+2026-03-23 13:16:51.173 +05:30 [INF] Server laptop-2j11tsn1:56580:8a5ee4fc successfully reported itself as stopped in 27.8305 ms
+2026-03-23 13:16:51.173 +05:30 [INF] Server laptop-2j11tsn1:56580:8a5ee4fc has been stopped in total 763.8772 ms
+2026-03-23 13:17:06 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-23 13:17:07 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-23 13:17:07 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 13:17:07 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-23 13:17:07 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-23 13:17:07 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-23 13:17:07 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-23 13:17:07 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-23 13:17:07 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-23 13:17:07 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-23 13:17:07 [Information] [TraceId: ] Server laptop-2j11tsn1:24360:8371eef3 successfully announced in 71.5901 ms
+2026-03-23 13:17:07 [Information] [TraceId: ] Server laptop-2j11tsn1:24360:8371eef3 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-23 13:17:07 [Information] [TraceId: ] Server laptop-2j11tsn1:24360:8371eef3 all the dispatchers started
+2026-03-23 13:17:07 [Information] [TraceId: 527cad93747626d4073ff95843329ec1] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-03-23 13:17:07 [Warning] [TraceId: 527cad93747626d4073ff95843329ec1] Failed to determine the https port for redirect.
+2026-03-23 13:17:07 [Information] [TraceId: 527cad93747626d4073ff95843329ec1] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 404 null null 131.5433ms
+2026-03-23 13:17:07 [Information] [TraceId: 527cad93747626d4073ff95843329ec1] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/", Response status code: 404
+2026-03-23 13:17:10 [Information] [TraceId: 3a3f44b85d9de9d62e2d8cfe5556925c] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-03-23 13:17:10 [Information] [TraceId: 3a3f44b85d9de9d62e2d8cfe5556925c] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 404 null null 23.2438ms
+2026-03-23 13:17:10 [Information] [TraceId: 3a3f44b85d9de9d62e2d8cfe5556925c] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/", Response status code: 404
+2026-03-23 13:19:01 [Information] [TraceId: ] Server laptop-2j11tsn1:24360:8371eef3 caught stopping signal...
+2026-03-23 13:19:01 [Information] [TraceId: ] Application is shutting down...
+2026-03-23 13:19:01 [Information] [TraceId: ] Server laptop-2j11tsn1:24360:8371eef3 All dispatchers stopped
+2026-03-23 13:19:01 [Information] [TraceId: ] Server laptop-2j11tsn1:24360:8371eef3 successfully reported itself as stopped in 11.5705 ms
+2026-03-23 13:19:01 [Information] [TraceId: ] Server laptop-2j11tsn1:24360:8371eef3 has been stopped in total 169.6142 ms
+2026-03-23 13:19:05 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-23 13:19:05 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-23 13:19:05 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 13:19:06 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-23 13:19:06 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-23 13:19:06 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-23 13:19:06 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-23 13:19:06 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-23 13:19:06 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-23 13:19:06 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-23 13:19:06 [Information] [TraceId: ] Server laptop-2j11tsn1:60628:a42b4e36 successfully announced in 86.0268 ms
+2026-03-23 13:19:06 [Information] [TraceId: ] Server laptop-2j11tsn1:60628:a42b4e36 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-23 13:19:06 [Information] [TraceId: ] Server laptop-2j11tsn1:60628:a42b4e36 all the dispatchers started
+2026-03-23 13:19:17 [Information] [TraceId: 6ac1e4a7f32288d3d2b9cd604f655a24] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-03-23 13:19:17 [Warning] [TraceId: 6ac1e4a7f32288d3d2b9cd604f655a24] Failed to determine the https port for redirect.
+2026-03-23 13:19:17 [Information] [TraceId: 6ac1e4a7f32288d3d2b9cd604f655a24] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 404 null null 257.2562ms
+2026-03-23 13:19:17 [Information] [TraceId: 6ac1e4a7f32288d3d2b9cd604f655a24] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/", Response status code: 404
+2026-03-23 13:19:22 [Information] [TraceId: d878ddbe671a83d19c79e4306ccdf50f] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 13:19:22 [Information] [TraceId: d878ddbe671a83d19c79e4306ccdf50f] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 161.3477ms
+2026-03-23 13:19:22 [Information] [TraceId: 5cdb95e7008ca529dcf93939b28b1119] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 13:19:22 [Information] [TraceId: 5cdb95e7008ca529dcf93939b28b1119] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 3.421ms
+2026-03-23 13:19:23 [Information] [TraceId: 8c4f7350657f28e055e8934183094c68] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 13:19:23 [Information] [TraceId: 8c4f7350657f28e055e8934183094c68] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 152.2383ms
+2026-03-23 13:19:40 [Information] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 13:19:40 [Information] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 13:19:40 [Information] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 13:19:41 [Warning] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-03-23 13:19:42 [Information] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Executed DbCommand ("36"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 13:19:42 [Information] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Executed DbCommand ("18"ms) [Parameters=["@p0='1015', @p1='2026-03-30T07:49:42.7455221Z', @p2='False', @p3='C90BLfe0vGAmpiE2PVWvFUCGD0URxwEnsJuBVaxAS0k=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 13:19:43 [Information] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 13:19:43 [Information] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Executed action "AuthController.Login (MyApi)" in 2592.7487ms
+2026-03-23 13:19:43 [Information] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 13:19:43 [Information] [TraceId: 3ebaf01d57b463a9d3b7f17675eb850f] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 2705.1611ms
+2026-03-23 13:20:00 [Information] [TraceId: 14a9f0d0332782f863e855cb3f93189d] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/20""" - null null
+2026-03-23 13:20:00 [Information] [TraceId: 14a9f0d0332782f863e855cb3f93189d] Executing endpoint '"EmployeesController.GetEmployee (MyApi)"'
+2026-03-23 13:20:00 [Information] [TraceId: 14a9f0d0332782f863e855cb3f93189d] Route matched with "{action = \"GetEmployee\", controller = \"Employees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployee(Int32)" on controller "EmployeesController" ("MyApi").
+2026-03-23 13:20:00 [Warning] [TraceId: 14a9f0d0332782f863e855cb3f93189d] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-23 13:20:00 [Information] [TraceId: 14a9f0d0332782f863e855cb3f93189d] GetEmployee called (id=20).
+2026-03-23 13:20:00 [Information] [TraceId: 14a9f0d0332782f863e855cb3f93189d] Executed DbCommand ("9"ms) [Parameters=["@__id_0='20'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Id] = @__id_0"
+2026-03-23 13:20:00 [Warning] [TraceId: 14a9f0d0332782f863e855cb3f93189d] GetEmployee not found (id=20).
+2026-03-23 13:20:00 [Information] [TraceId: 14a9f0d0332782f863e855cb3f93189d] Executing "ObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'.
+2026-03-23 13:20:00 [Information] [TraceId: 14a9f0d0332782f863e855cb3f93189d] Executed action "EmployeesController.GetEmployee (MyApi)" in 191.6733ms
+2026-03-23 13:20:00 [Information] [TraceId: 14a9f0d0332782f863e855cb3f93189d] Executed endpoint '"EmployeesController.GetEmployee (MyApi)"'
+2026-03-23 13:20:00 [Information] [TraceId: 14a9f0d0332782f863e855cb3f93189d] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/20""" - 404 null "application/problem+json; charset=utf-8" 296.0145ms
+2026-03-23 13:20:26 [Information] [TraceId: f05b184d93bc0389fb0d1e39970539d7] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/all""" - null null
+2026-03-23 13:20:26 [Information] [TraceId: f05b184d93bc0389fb0d1e39970539d7] Executing endpoint '"EmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 13:20:26 [Information] [TraceId: f05b184d93bc0389fb0d1e39970539d7] Route matched with "{action = \"GetAllEmployees\", controller = \"Employees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees()" on controller "EmployeesController" ("MyApi").
+2026-03-23 13:20:26 [Information] [TraceId: f05b184d93bc0389fb0d1e39970539d7] GetAllEmployees called.
+2026-03-23 13:20:27 [Information] [TraceId: f05b184d93bc0389fb0d1e39970539d7] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]"
+2026-03-23 13:20:27 [Information] [TraceId: f05b184d93bc0389fb0d1e39970539d7] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[MyApi.DTO.Employee.Reademployeedto, MyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2026-03-23 13:20:27 [Information] [TraceId: f05b184d93bc0389fb0d1e39970539d7] Executed action "EmployeesController.GetAllEmployees (MyApi)" in 137.0166ms
+2026-03-23 13:20:27 [Information] [TraceId: f05b184d93bc0389fb0d1e39970539d7] Executed endpoint '"EmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 13:20:27 [Information] [TraceId: f05b184d93bc0389fb0d1e39970539d7] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/all""" - 200 null "application/json; charset=utf-8" 147.4103ms
+2026-03-23 13:23:08 [Information] [TraceId: 42480875c95bd2add5f779de519dcc2a] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/all""" - null null
+2026-03-23 13:23:08 [Information] [TraceId: 42480875c95bd2add5f779de519dcc2a] Executing endpoint '"EmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 13:23:08 [Information] [TraceId: 42480875c95bd2add5f779de519dcc2a] Route matched with "{action = \"GetAllEmployees\", controller = \"Employees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees()" on controller "EmployeesController" ("MyApi").
+2026-03-23 13:23:08 [Information] [TraceId: 42480875c95bd2add5f779de519dcc2a] GetAllEmployees called.
+2026-03-23 13:23:08 [Information] [TraceId: 42480875c95bd2add5f779de519dcc2a] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[MyApi.DTO.Employee.Reademployeedto, MyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2026-03-23 13:23:08 [Information] [TraceId: 42480875c95bd2add5f779de519dcc2a] Executed action "EmployeesController.GetAllEmployees (MyApi)" in 2.945ms
+2026-03-23 13:23:08 [Information] [TraceId: 42480875c95bd2add5f779de519dcc2a] Executed endpoint '"EmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 13:23:08 [Information] [TraceId: 42480875c95bd2add5f779de519dcc2a] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/all""" - 200 null "application/json; charset=utf-8" 16.3494ms
+2026-03-23 14:23:28 [Information] [TraceId: 28e10e57cb9d34e553c1c7859e513691] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 14:23:28 [Information] [TraceId: 28e10e57cb9d34e553c1c7859e513691] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 3.95ms
+2026-03-23 14:23:28 [Information] [TraceId: 2d0d3f2e580a581622bde2036b239891] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 14:23:28 [Information] [TraceId: 2d0d3f2e580a581622bde2036b239891] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 2.107ms
+2026-03-23 14:23:31 [Information] [TraceId: e4bf2047380aee124d28eb30d09e26c5] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 14:23:31 [Information] [TraceId: e4bf2047380aee124d28eb30d09e26c5] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 15.5422ms
+2026-03-23 14:23:31 [Information] [TraceId: 307b7d588efd3a5e1ed14e589f22390b] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/favicon-32x32.png""" - null null
+2026-03-23 14:23:31 [Information] [TraceId: 307b7d588efd3a5e1ed14e589f22390b] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+2026-03-23 14:23:31 [Information] [TraceId: 307b7d588efd3a5e1ed14e589f22390b] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 13.0429ms
+2026-03-23 14:25:28 [Information] [TraceId: ] Server laptop-2j11tsn1:60628:a42b4e36 caught stopping signal...
+2026-03-23 14:25:28 [Information] [TraceId: ] Application is shutting down...
+2026-03-23 14:25:29 [Information] [TraceId: ] Server laptop-2j11tsn1:60628:a42b4e36 All dispatchers stopped
+2026-03-23 14:25:29 [Information] [TraceId: ] Server laptop-2j11tsn1:60628:a42b4e36 successfully reported itself as stopped in 13.0651 ms
+2026-03-23 14:25:29 [Information] [TraceId: ] Server laptop-2j11tsn1:60628:a42b4e36 has been stopped in total 292.8074 ms
+2026-03-23 14:25:36 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-23 14:25:37 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-23 14:25:37 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 14:25:37 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-23 14:25:37 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-23 14:25:37 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-23 14:25:37 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-23 14:25:37 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-23 14:25:37 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-23 14:25:37 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-23 14:25:38 [Information] [TraceId: ] Server laptop-2j11tsn1:70912:55ccf908 successfully announced in 79.9185 ms
+2026-03-23 14:25:38 [Information] [TraceId: ] Server laptop-2j11tsn1:70912:55ccf908 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-23 14:25:38 [Information] [TraceId: ] Server laptop-2j11tsn1:70912:55ccf908 all the dispatchers started
+2026-03-23 14:25:38 [Information] [TraceId: 497ce82ec9a01692fd5605cf527ddd8a] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-03-23 14:25:38 [Warning] [TraceId: 497ce82ec9a01692fd5605cf527ddd8a] Failed to determine the https port for redirect.
+2026-03-23 14:25:38 [Information] [TraceId: 497ce82ec9a01692fd5605cf527ddd8a] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 404 null null 155.2451ms
+2026-03-23 14:25:38 [Information] [TraceId: 497ce82ec9a01692fd5605cf527ddd8a] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/", Response status code: 404
+2026-03-23 14:25:44 [Information] [TraceId: 1049d8d06e1b3daffdbf5d87e7deb31a] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 14:25:45 [Information] [TraceId: 1049d8d06e1b3daffdbf5d87e7deb31a] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 239.206ms
+2026-03-23 14:25:45 [Information] [TraceId: 71c85f877afa9a0ba845db5c4da83aa2] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 14:25:45 [Information] [TraceId: 71c85f877afa9a0ba845db5c4da83aa2] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 3.8215ms
+2026-03-23 14:25:45 [Information] [TraceId: 5bbb2de63c29b6d07e73cb6ef9f6a609] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 14:25:45 [Information] [TraceId: 5bbb2de63c29b6d07e73cb6ef9f6a609] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 210.8201ms
+2026-03-23 14:25:59 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 14:25:59 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 14:25:59 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 14:25:59 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Login requested for email "user56@gmail.com".
+2026-03-23 14:25:59 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 14:26:01 [Warning] [TraceId: 10b62a07f2be887bd603257240e9ee36] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-03-23 14:26:02 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Executed DbCommand ("65"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 14:26:02 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Generating refresh token.
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Creating refresh token entity for employee (id=1015).
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Hashing refresh token.
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 08:56:03).
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Executed DbCommand ("19"ms) [Parameters=["@p0='1015', @p1='2026-03-30T08:56:03.0430772Z', @p2='False', @p3='H3YuJq187ir+xXA6B4zB/Uv2F7frCk2Eej71C+2RngE=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Executed action "AuthController.Login (MyApi)" in 3847.8597ms
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 14:26:03 [Information] [TraceId: 10b62a07f2be887bd603257240e9ee36] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 4012.4449ms
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/all""" - null null
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Executing endpoint '"EmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Route matched with "{action = \"GetAllEmployees\", controller = \"Employees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees()" on controller "EmployeesController" ("MyApi").
+2026-03-23 14:26:22 [Warning] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] GetAllEmployees called.
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Fetching all employees from service.
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Employee list cache miss. Loading from repository.
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Fetching all employees from repository.
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]"
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Employee list cached with 8 records.
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[MyApi.DTO.Employee.Reademployeedto, MyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Executed action "EmployeesController.GetAllEmployees (MyApi)" in 223.4142ms
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Executed endpoint '"EmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 14:26:22 [Information] [TraceId: a23b1d22698c1744dd0a5b88ba15dd8a] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/all""" - 200 null "application/json; charset=utf-8" 327.662ms
+2026-03-23 14:52:18 [Information] [TraceId: ] Server laptop-2j11tsn1:70912:55ccf908 caught stopping signal...
+2026-03-23 14:52:18 [Information] [TraceId: ] Application is shutting down...
+2026-03-23 14:52:19 [Information] [TraceId: ] Server laptop-2j11tsn1:70912:55ccf908 All dispatchers stopped
+2026-03-23 14:52:19 [Information] [TraceId: ] Server laptop-2j11tsn1:70912:55ccf908 successfully reported itself as stopped in 5.1827 ms
+2026-03-23 14:52:19 [Information] [TraceId: ] Server laptop-2j11tsn1:70912:55ccf908 has been stopped in total 447.7911 ms
+2026-03-23 15:03:27 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-23 15:03:28 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-23 15:03:28 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 15:03:29 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-23 15:03:29 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-23 15:03:29 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-23 15:03:29 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-23 15:03:29 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-23 15:03:29 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-23 15:03:29 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-23 15:03:29 [Information] [TraceId: ] Server laptop-2j11tsn1:78304:58f8828d successfully announced in 116.4159 ms
+2026-03-23 15:03:29 [Information] [TraceId: ] Server laptop-2j11tsn1:78304:58f8828d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-23 15:03:29 [Information] [TraceId: ] Server laptop-2j11tsn1:78304:58f8828d all the dispatchers started
+2026-03-23 15:03:29 [Information] [TraceId: 3525713a37212868f533d03a41c3cd6d] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-03-23 15:03:29 [Warning] [TraceId: 3525713a37212868f533d03a41c3cd6d] Failed to determine the https port for redirect.
+2026-03-23 15:03:29 [Information] [TraceId: 3525713a37212868f533d03a41c3cd6d] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 404 null null 269.5178ms
+2026-03-23 15:03:29 [Information] [TraceId: 3525713a37212868f533d03a41c3cd6d] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/", Response status code: 404
+2026-03-23 15:03:34 [Information] [TraceId: 9e12c2683ff7b04cbda06b1dd90a5f38] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 15:03:34 [Information] [TraceId: 9e12c2683ff7b04cbda06b1dd90a5f38] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 210.1657ms
+2026-03-23 15:03:35 [Information] [TraceId: 075a07754fd11a437452696c47940bca] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 15:03:35 [Information] [TraceId: 075a07754fd11a437452696c47940bca] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 6.6642ms
+2026-03-23 15:03:35 [Information] [TraceId: ef92a68683b33b329e979cbc00bf1222] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 15:03:35 [Information] [TraceId: ef92a68683b33b329e979cbc00bf1222] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 150.091ms
+2026-03-23 15:03:59 [Information] [TraceId: f5ff48111741899720b07535cf319bab] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 15:03:59 [Information] [TraceId: f5ff48111741899720b07535cf319bab] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 0.964ms
+2026-03-23 15:03:59 [Information] [TraceId: 18a6697496c5e80b2e147d36549f3f19] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 15:03:59 [Information] [TraceId: 18a6697496c5e80b2e147d36549f3f19] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 0.7178ms
+2026-03-23 15:03:59 [Information] [TraceId: 67eb0ecdaeff18099d16646d8d78d17e] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 15:03:59 [Information] [TraceId: 67eb0ecdaeff18099d16646d8d78d17e] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 17.1019ms
+2026-03-23 15:04:11 [Information] [TraceId: a3bcd3d814ce6a9c916996255309edc9] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 15:04:11 [Information] [TraceId: a3bcd3d814ce6a9c916996255309edc9] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 1.2037ms
+2026-03-23 15:04:11 [Information] [TraceId: 309fe25423407f68bf4e9045d0f5c90f] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 15:04:11 [Information] [TraceId: 309fe25423407f68bf4e9045d0f5c90f] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 0.5431ms
+2026-03-23 15:04:12 [Information] [TraceId: 15edc00995abcaceb4c50addf8504b4a] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 15:04:12 [Information] [TraceId: 15edc00995abcaceb4c50addf8504b4a] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 19.6062ms
+2026-03-23 15:04:20 [Information] [TraceId: 3c9b72fea493e5229fae07318386090a] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 15:04:20 [Information] [TraceId: 3c9b72fea493e5229fae07318386090a] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 0.6683ms
+2026-03-23 15:04:20 [Information] [TraceId: c13a7add28bc35088579671043baa4ab] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 15:04:20 [Information] [TraceId: c13a7add28bc35088579671043baa4ab] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 1.288ms
+2026-03-23 15:04:22 [Information] [TraceId: 076fd781b170b8593bbb13b010c2f30d] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 15:04:22 [Information] [TraceId: 076fd781b170b8593bbb13b010c2f30d] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 13.3034ms
+2026-03-23 15:04:39 [Information] [TraceId: eab6a790f5c29e2fc784c6c74212c502] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 15:04:39 [Information] [TraceId: eab6a790f5c29e2fc784c6c74212c502] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 2.7255ms
+2026-03-23 15:04:39 [Information] [TraceId: 3a6e6cf3892770edd4429c8457a9cc34] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 15:04:39 [Information] [TraceId: 3a6e6cf3892770edd4429c8457a9cc34] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 3.8326ms
+2026-03-23 15:04:40 [Information] [TraceId: cc3fc2561f02ffb25456e958c06462e3] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 15:04:40 [Information] [TraceId: cc3fc2561f02ffb25456e958c06462e3] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 6.7197ms
+2026-03-23 15:05:22 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 15:05:22 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 15:05:23 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 15:05:23 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Login requested for email "user56@gmail.com".
+2026-03-23 15:05:23 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 15:05:24 [Warning] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-03-23 15:05:25 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Executed DbCommand ("101"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 15:05:26 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 15:05:26 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Generating refresh token.
+2026-03-23 15:05:26 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Creating refresh token entity for employee (id=1015).
+2026-03-23 15:05:26 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Hashing refresh token.
+2026-03-23 15:05:26 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 09:35:26).
+2026-03-23 15:05:26 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Executed DbCommand ("71"ms) [Parameters=["@p0='1015', @p1='2026-03-30T09:35:26.4348812Z', @p2='False', @p3='H+gqY6jZJhIYD4M1WWFD129NtHm396rDrYQStWmYXps=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 15:05:27 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 15:05:27 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 15:05:27 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Executed action "AuthController.Login (MyApi)" in 4107.9246ms
+2026-03-23 15:05:27 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 15:05:27 [Information] [TraceId: d24cd7ea8258cf5a0a41d5c796594d01] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 4272.5221ms
+2026-03-23 15:05:59 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees""?Search=tanvi&DepartmentId=13&MinSalary=0&Desc=true&Page=1&PageSize=5" - null null
+2026-03-23 15:05:59 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Executing endpoint '"EmployeesController.GetEmployees (MyApi)"'
+2026-03-23 15:05:59 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Route matched with "{action = \"GetEmployees\", controller = \"Employees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployees(MyApi.DTO.Employee.EmployeeQueryDto)" on controller "EmployeesController" ("MyApi").
+2026-03-23 15:05:59 [Warning] [TraceId: 5439b90bca9edf9d873443052e216535] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-23 15:05:59 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] GetEmployees called (search="tanvi", departmentId=13, minSalary=0, page=1, pageSize=5, sortBy=null, desc=True).
+2026-03-23 15:05:59 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Fetching employees with query (search="tanvi", departmentId=13, minSalary=0, page=1, pageSize=5, sortBy=null, desc=True).
+2026-03-23 15:05:59 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Building employee queryable in repository.
+2026-03-23 15:05:59 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Executed DbCommand ("86"ms) [Parameters=["@__search_0_contains='%tanvi%' (Size = 100), @__search_0_contains_1='%tanvi%' (Size = 450), @__query_DepartmentId_Value_1='13', @__query_MinSalary_Value_2='0' (Precision = 10) (Scale = 2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Employees] AS [e]
+WHERE ([e].[Name] LIKE @__search_0_contains ESCAPE N'\' OR [e].[Email] LIKE @__search_0_contains_1 ESCAPE N'\') AND [e].[DepartmentId] = @__query_DepartmentId_Value_1 AND [e].[Salary] >= @__query_MinSalary_Value_2"
+2026-03-23 15:06:00 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Executed DbCommand ("36"ms) [Parameters=["@__search_0_contains='%tanvi%' (Size = 100), @__search_0_contains_1='%tanvi%' (Size = 450), @__query_DepartmentId_Value_1='13', @__query_MinSalary_Value_2='0' (Precision = 10) (Scale = 2), @__p_3='0', @__p_4='5'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Name], [t].[Email], [d].[Name] AS [DepartmentName], [t].[Salary], [e0].[Name] AS [ManagerName]
+FROM (
+    SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[ManagerId], [e].[Name], [e].[Salary]
+    FROM [Employees] AS [e]
+    WHERE ([e].[Name] LIKE @__search_0_contains ESCAPE N'\' OR [e].[Email] LIKE @__search_0_contains_1 ESCAPE N'\') AND [e].[DepartmentId] = @__query_DepartmentId_Value_1 AND [e].[Salary] >= @__query_MinSalary_Value_2
+    ORDER BY [e].[Id]
+    OFFSET @__p_3 ROWS FETCH NEXT @__p_4 ROWS ONLY
+) AS [t]
+INNER JOIN [Departments] AS [d] ON [t].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [t].[ManagerId] = [e0].[Id]
+ORDER BY [t].[Id]"
+2026-03-23 15:06:00 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Employee query completed with 1 results out of 1.
+2026-03-23 15:06:00 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType12`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[MyApi.DTO.Employee.Reademployeedto, MyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 15:06:00 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Executed action "EmployeesController.GetEmployees (MyApi)" in 697.9669ms
+2026-03-23 15:06:00 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Executed endpoint '"EmployeesController.GetEmployees (MyApi)"'
+2026-03-23 15:06:00 [Information] [TraceId: 5439b90bca9edf9d873443052e216535] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees""?Search=tanvi&DepartmentId=13&MinSalary=0&Desc=true&Page=1&PageSize=5" - 200 null "application/json; charset=utf-8" 874.7828ms
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/all""" - null null
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Executing endpoint '"EmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Route matched with "{action = \"GetAllEmployees\", controller = \"Employees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees()" on controller "EmployeesController" ("MyApi").
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] GetAllEmployees called.
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Fetching all employees from service.
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Employee list cache miss. Loading from repository.
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Fetching all employees from repository.
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]"
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Employee list cached with 8 records.
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[MyApi.DTO.Employee.Reademployeedto, MyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Executed action "EmployeesController.GetAllEmployees (MyApi)" in 286.5716ms
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Executed endpoint '"EmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 15:06:09 [Information] [TraceId: 86ba2e70457ff2ccfed20050ff6038b9] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/all""" - 200 null "application/json; charset=utf-8" 321.6443ms
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/1008""" - null null
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Executing endpoint '"EmployeesController.GetEmployee (MyApi)"'
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Route matched with "{action = \"GetEmployee\", controller = \"Employees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployee(Int32)" on controller "EmployeesController" ("MyApi").
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] GetEmployee called (id=1008).
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Fetching employee by id from service (id=1008).
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Fetching employee by id from repository (id=1008).
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Executed DbCommand ("21"ms) [Parameters=["@__id_0='1008'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Id] = @__id_0"
+2026-03-23 15:06:20 [Warning] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Employee not found in service (id=1008).
+2026-03-23 15:06:20 [Warning] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] GetEmployee not found (id=1008).
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Executing "ObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'.
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Executed action "EmployeesController.GetEmployee (MyApi)" in 86.8876ms
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Executed endpoint '"EmployeesController.GetEmployee (MyApi)"'
+2026-03-23 15:06:20 [Information] [TraceId: 9cadc2ac283c193b27caf3bb54ed9773] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/1008""" - 404 null "application/problem+json; charset=utf-8" 100.6001ms
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/7""" - null null
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Executing endpoint '"EmployeesController.GetEmployee (MyApi)"'
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Route matched with "{action = \"GetEmployee\", controller = \"Employees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployee(Int32)" on controller "EmployeesController" ("MyApi").
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] GetEmployee called (id=7).
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Fetching employee by id from service (id=7).
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Fetching employee by id from repository (id=7).
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Executed DbCommand ("86"ms) [Parameters=["@__id_0='7'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Id] = @__id_0"
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Executing "OkObjectResult", writing value of type '"MyApi.DTO.Employee.Reademployeedto"'.
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Executed action "EmployeesController.GetEmployee (MyApi)" in 118.8489ms
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Executed endpoint '"EmployeesController.GetEmployee (MyApi)"'
+2026-03-23 15:06:25 [Information] [TraceId: 735e488ba1c3f7e1ee2cfe30424869bd] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/7""" - 200 null "application/json; charset=utf-8" 121.4002ms
+2026-03-23 15:06:35 [Information] [TraceId: 18c24a2e006af674ea32129f57c18415] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/me""" - null null
+2026-03-23 15:06:35 [Information] [TraceId: 18c24a2e006af674ea32129f57c18415] Executing endpoint '"EmployeesController.GetLoggedInUser (MyApi)"'
+2026-03-23 15:06:35 [Information] [TraceId: 18c24a2e006af674ea32129f57c18415] Route matched with "{action = \"GetLoggedInUser\", controller = \"Employees\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetLoggedInUser()" on controller "EmployeesController" ("MyApi").
+2026-03-23 15:06:35 [Information] [TraceId: 18c24a2e006af674ea32129f57c18415] GetLoggedInUser called (userId="1015", email="user56@gmail.com", role="Admin").
+2026-03-23 15:06:35 [Information] [TraceId: 18c24a2e006af674ea32129f57c18415] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 15:06:35 [Information] [TraceId: 18c24a2e006af674ea32129f57c18415] Executed action "EmployeesController.GetLoggedInUser (MyApi)" in 8.5407ms
+2026-03-23 15:06:35 [Information] [TraceId: 18c24a2e006af674ea32129f57c18415] Executed endpoint '"EmployeesController.GetLoggedInUser (MyApi)"'
+2026-03-23 15:06:35 [Information] [TraceId: 18c24a2e006af674ea32129f57c18415] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/me""" - 200 null "application/json; charset=utf-8" 29.0146ms
+2026-03-23 15:11:48 [Information] [TraceId: c86f4d49c99cacf6553ee76f156f9cb3] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 15:11:48 [Information] [TraceId: c86f4d49c99cacf6553ee76f156f9cb3] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 0.8998ms
+2026-03-23 15:11:48 [Information] [TraceId: fa1748db3c8dcfc0102d8244d2351555] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 15:11:48 [Information] [TraceId: fa1748db3c8dcfc0102d8244d2351555] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 4.7876ms
+2026-03-23 15:11:49 [Information] [TraceId: 90c4a98f46529d76628e066b3de0d408] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 15:11:49 [Information] [TraceId: 90c4a98f46529d76628e066b3de0d408] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 7.0748ms
+2026-03-23 15:26:48 [Information] [TraceId: 073655768b7b4e971f62be597f3ce8ad] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 15:26:48 [Information] [TraceId: 073655768b7b4e971f62be597f3ce8ad] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 4.0691ms
+2026-03-23 15:26:48 [Information] [TraceId: cac1efae98f66ef210050e14716f2d5d] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 15:26:48 [Information] [TraceId: cac1efae98f66ef210050e14716f2d5d] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 4.6986ms
+2026-03-23 15:26:48 [Information] [TraceId: f97ea3279e52867b39091e12e1d010a3] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 15:26:48 [Information] [TraceId: f97ea3279e52867b39091e12e1d010a3] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 12.4941ms
+2026-03-23 15:26:51 [Information] [TraceId: ] Server laptop-2j11tsn1:78304:58f8828d caught stopping signal...
+2026-03-23 15:26:51 [Information] [TraceId: ] Application is shutting down...
+2026-03-23 15:26:52 [Information] [TraceId: ] Server laptop-2j11tsn1:78304:58f8828d caught stopped signal...
+2026-03-23 15:26:52 [Information] [TraceId: ] Server laptop-2j11tsn1:78304:58f8828d All dispatchers stopped
+2026-03-23 15:26:52 [Information] [TraceId: ] Server laptop-2j11tsn1:78304:58f8828d successfully reported itself as stopped in 9.0654 ms
+2026-03-23 15:26:52 [Information] [TraceId: ] Server laptop-2j11tsn1:78304:58f8828d has been stopped in total 823.7182 ms
+2026-03-23 15:50:58 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-23 15:51:07 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-23 15:51:09 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-23 15:51:09 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 15:51:09 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-23 15:51:09 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-23 15:51:09 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-23 15:51:09 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-23 15:51:09 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-23 15:51:09 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-23 15:51:09 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-23 15:51:09 [Information] [TraceId: ] Server laptop-2j11tsn1:82660:c0bd43b5 successfully announced in 140.2831 ms
+2026-03-23 15:51:09 [Information] [TraceId: ] Server laptop-2j11tsn1:82660:c0bd43b5 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-23 15:51:09 [Information] [TraceId: ] Server laptop-2j11tsn1:82660:c0bd43b5 all the dispatchers started
+2026-03-23 15:51:10 [Information] [TraceId: ebd8c7bdc2094da96ca7703486ceb721] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-03-23 15:51:10 [Warning] [TraceId: ebd8c7bdc2094da96ca7703486ceb721] Failed to determine the https port for redirect.
+2026-03-23 15:51:10 [Information] [TraceId: ebd8c7bdc2094da96ca7703486ceb721] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 404 null null 319.2819ms
+2026-03-23 15:51:10 [Information] [TraceId: ebd8c7bdc2094da96ca7703486ceb721] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/", Response status code: 404
+2026-03-23 15:51:14 [Information] [TraceId: e69bec4fc661b02a2441aa5050e45672] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 15:51:14 [Information] [TraceId: e69bec4fc661b02a2441aa5050e45672] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 263.3429ms
+2026-03-23 15:51:14 [Information] [TraceId: 794cad2d14b84e42b5e08f8017537e94] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 15:51:14 [Information] [TraceId: 794cad2d14b84e42b5e08f8017537e94] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 2.6005ms
+2026-03-23 15:51:14 [Information] [TraceId: 4e0cac50b73ecc3c4add5053626fdbf9] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 15:51:15 [Information] [TraceId: 4e0cac50b73ecc3c4add5053626fdbf9] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 214.0182ms
+2026-03-23 15:52:24 [Information] [TraceId: ffa8aa5e1a4463a10030162e59ea9edd] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/all""" - null null
+2026-03-23 15:52:24 [Information] [TraceId: ffa8aa5e1a4463a10030162e59ea9edd] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+2026-03-23 15:52:24 [Information] [TraceId: ffa8aa5e1a4463a10030162e59ea9edd] AuthenticationScheme: "Bearer" was challenged.
+2026-03-23 15:52:24 [Information] [TraceId: ffa8aa5e1a4463a10030162e59ea9edd] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/all""" - 401 0 null 41.2872ms
+2026-03-23 15:52:39 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 15:52:39 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 15:52:39 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 15:52:39 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Login requested for email "user56@gmail.com".
+2026-03-23 15:52:39 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 15:52:40 [Warning] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-03-23 15:52:42 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Executed DbCommand ("41"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Generating refresh token.
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Creating refresh token entity for employee (id=1015).
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Hashing refresh token.
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 10:22:43).
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Executed DbCommand ("11"ms) [Parameters=["@p0='1015', @p1='2026-03-30T10:22:43.1716934Z', @p2='False', @p3='ugmQujUjxQ2MQW8tq8LZ1zl26wOEOICOpJsB6B4on+A=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Executed action "AuthController.Login (MyApi)" in 4153.2525ms
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 15:52:43 [Information] [TraceId: 63e959e080594cc4702b22c1c1b55ff5] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 4316.3397ms
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/all""" - null null
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Executing endpoint '"DapperEmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Route matched with "{action = \"GetAllEmployees\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees()" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Dapper GetAllEmployees called.
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Fetching all employees through Dapper service.
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Fetching all employees with Dapper.
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[MyApi.DTO.Employee.Reademployeedto, MyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Executed action "DapperEmployeesController.GetAllEmployees (MyApi)" in 145.6344ms
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Executed endpoint '"DapperEmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 15:52:55 [Information] [TraceId: eef806b37bac77427f65fed61d3df852] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/all""" - 200 null "application/json; charset=utf-8" 289.6069ms
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/1014""" - null null
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Executing endpoint '"DapperEmployeesController.GetEmployee (MyApi)"'
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Route matched with "{action = \"GetEmployee\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployee(Int32)" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Dapper GetEmployee called (id=1014).
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Fetching employee by id through Dapper service (id=1014).
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Fetching employee by id with Dapper (id=1014).
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Executing "ObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'.
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Executed action "DapperEmployeesController.GetEmployee (MyApi)" in 90.4877ms
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Executed endpoint '"DapperEmployeesController.GetEmployee (MyApi)"'
+2026-03-23 15:53:15 [Information] [TraceId: 5a0efed5fa7c3b453784924ff813d14f] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/1014""" - 404 null "application/problem+json; charset=utf-8" 124.2242ms
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/1013""" - null null
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Executing endpoint '"DapperEmployeesController.GetEmployee (MyApi)"'
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Route matched with "{action = \"GetEmployee\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployee(Int32)" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Dapper GetEmployee called (id=1013).
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Fetching employee by id through Dapper service (id=1013).
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Fetching employee by id with Dapper (id=1013).
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Executing "OkObjectResult", writing value of type '"MyApi.DTO.Employee.Reademployeedto"'.
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Executed action "DapperEmployeesController.GetEmployee (MyApi)" in 47.5119ms
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Executed endpoint '"DapperEmployeesController.GetEmployee (MyApi)"'
+2026-03-23 15:53:22 [Information] [TraceId: 4b05fa4e228e48036626fadb2cf87ad7] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/1013""" - 200 null "application/json; charset=utf-8" 56.8646ms
+2026-03-23 16:49:21 [Information] [TraceId: 3a29fb80798fa1a2947c1af32159eec3] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - "application/json" 148
+2026-03-23 16:49:22 [Information] [TraceId: 3a29fb80798fa1a2947c1af32159eec3] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-03-2026 10:37:43', Current time (UTC): '23-03-2026 11:19:21'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-03-23 16:49:22 [Information] [TraceId: 3a29fb80798fa1a2947c1af32159eec3] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-03-2026 10:37:43', Current time (UTC): '23-03-2026 11:19:21'."
+2026-03-23 16:49:22 [Information] [TraceId: 3a29fb80798fa1a2947c1af32159eec3] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)"
+2026-03-23 16:49:22 [Information] [TraceId: 3a29fb80798fa1a2947c1af32159eec3] AuthenticationScheme: "Bearer" was challenged.
+2026-03-23 16:49:22 [Information] [TraceId: 3a29fb80798fa1a2947c1af32159eec3] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - 401 0 null 277.9258ms
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-03-2026 10:37:43', Current time (UTC): '23-03-2026 11:19:29'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-03-2026 10:37:43', Current time (UTC): '23-03-2026 11:19:29'."
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Login requested for email "user56@gmail.com".
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Executed DbCommand ("18"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Generating refresh token.
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Creating refresh token entity for employee (id=1015).
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Hashing refresh token.
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 11:19:29).
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Executed DbCommand ("10"ms) [Parameters=["@p0='1015', @p1='2026-03-30T11:19:29.9523271Z', @p2='False', @p3='EflozzLDs/tm3GoFTtZpNipJ5c8LMijoOtZM6eDm8Os=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Executed action "AuthController.Login (MyApi)" in 590.2611ms
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 16:49:29 [Information] [TraceId: 2052aeed8371eae74e08040e4c5943e3] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 631.7203ms
+2026-03-23 16:49:43 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - "application/json" 148
+2026-03-23 16:49:43 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Executing endpoint '"DapperEmployeesController.CreateEmployee (MyApi)"'
+2026-03-23 16:49:43 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Route matched with "{action = \"CreateEmployee\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEmployee(MyApi.DTO.Employee.Createemployeedto)" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 16:49:43 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Dapper CreateEmployee called (email="xyz@example.com").
+2026-03-23 16:49:43 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Creating employee through Dapper service (email="xyz@example.com", name="xyz").
+2026-03-23 16:49:44 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Creating employee with Dapper (email="xyz@example.com", name="xyz").
+2026-03-23 16:49:44 [Error] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Dapper CreateEmployee failed.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY SAME TABLE constraint "FK_Employees_Employees_ManagerId". The conflict occurred in database "employeeDb", table "dbo.Employees", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteScalarImplAsync[T](IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1242
+   at MyApi.Repository.Implementation.DapperEmployeeRepository.CreateAsync(Createemployeedto dto, String passwordHash, String hmacSecret)
+   at MyApi.Repository.Implementation.DapperEmployeeRepository.CreateAsync(Createemployeedto dto, String passwordHash, String hmacSecret)
+   at MyApi.Service.Implementation.DapperEmployeeService.CreateEmployeeAsync(Createemployeedto dto)
+   at DapperEmployeesController.CreateEmployee(Createemployeedto dto)
+ClientConnectionId:77dbdb10-117e-4203-8fd2-b27909ef67e3
+Error Number:547,State:0,Class:16
+2026-03-23 16:49:44 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Executing "ObjectResult", writing value of type '"System.String"'.
+2026-03-23 16:49:44 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Executed action "DapperEmployeesController.CreateEmployee (MyApi)" in 530.8177ms
+2026-03-23 16:49:44 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Executed endpoint '"DapperEmployeesController.CreateEmployee (MyApi)"'
+2026-03-23 16:49:44 [Information] [TraceId: d9addd03d30eea17ce3ff868885ef3e5] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - 500 null "text/plain; charset=utf-8" 554.9744ms
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/1013""" - null null
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Executing endpoint '"DapperEmployeesController.GetEmployee (MyApi)"'
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Route matched with "{action = \"GetEmployee\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployee(Int32)" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Dapper GetEmployee called (id=1013).
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Fetching employee by id through Dapper service (id=1013).
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Fetching employee by id with Dapper (id=1013).
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Executing "OkObjectResult", writing value of type '"MyApi.DTO.Employee.Reademployeedto"'.
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Executed action "DapperEmployeesController.GetEmployee (MyApi)" in 65.3371ms
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Executed endpoint '"DapperEmployeesController.GetEmployee (MyApi)"'
+2026-03-23 16:50:02 [Information] [TraceId: 224e02d08d5f4628e9baaa6960fa36ec] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/1013""" - 200 null "application/json; charset=utf-8" 86.1527ms
+2026-03-23 16:51:00 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - "application/json" 151
+2026-03-23 16:51:00 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Executing endpoint '"DapperEmployeesController.CreateEmployee (MyApi)"'
+2026-03-23 16:51:00 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Route matched with "{action = \"CreateEmployee\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEmployee(MyApi.DTO.Employee.Createemployeedto)" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 16:51:00 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Dapper CreateEmployee called (email="xyz@example.com").
+2026-03-23 16:51:00 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Creating employee through Dapper service (email="xyz@example.com", name="xyz").
+2026-03-23 16:51:01 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Creating employee with Dapper (email="xyz@example.com", name="xyz").
+2026-03-23 16:51:01 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Fetching employee by id with Dapper (id=1018).
+2026-03-23 16:51:01 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Executing "CreatedAtActionResult", writing value of type '"MyApi.DTO.Employee.Reademployeedto"'.
+2026-03-23 16:51:01 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Executed action "DapperEmployeesController.CreateEmployee (MyApi)" in 963.2205ms
+2026-03-23 16:51:01 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Executed endpoint '"DapperEmployeesController.CreateEmployee (MyApi)"'
+2026-03-23 16:51:01 [Information] [TraceId: 5c6b04218987c245bc76afecbd94e4c4] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - 201 null "application/json; charset=utf-8" 972.7689ms
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/all""" - null null
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Executing endpoint '"DapperEmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Route matched with "{action = \"GetAllEmployees\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees()" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Dapper GetAllEmployees called.
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Fetching all employees through Dapper service.
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Fetching all employees with Dapper.
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[MyApi.DTO.Employee.Reademployeedto, MyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Executed action "DapperEmployeesController.GetAllEmployees (MyApi)" in 12.9247ms
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Executed endpoint '"DapperEmployeesController.GetAllEmployees (MyApi)"'
+2026-03-23 16:51:31 [Information] [TraceId: 5ed6171c2a3d51f1258c67f14194a29f] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/all""" - 200 null "application/json; charset=utf-8" 37.7103ms
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5062""""/api/dapper-employees/1013""" - "application/json" 114
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Executing endpoint '"DapperEmployeesController.UpdateEmployee (MyApi)"'
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Route matched with "{action = \"UpdateEmployee\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateEmployee(Int32, MyApi.DTO.Employee.Updateemployeedto)" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Dapper UpdateEmployee called (id=1013).
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Updating employee through Dapper service (id=1013).
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Fetching employee by id with Dapper (id=1013).
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Updating employee with Dapper (id=1013).
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Fetching employee by id with Dapper (id=1013).
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Executing "OkObjectResult", writing value of type '"MyApi.DTO.Employee.Reademployeedto"'.
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Executed action "DapperEmployeesController.UpdateEmployee (MyApi)" in 200.8104ms
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Executed endpoint '"DapperEmployeesController.UpdateEmployee (MyApi)"'
+2026-03-23 16:56:54 [Information] [TraceId: 38296c2dcf4814ebabdc45b9c5b0aafb] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5062""""/api/dapper-employees/1013""" - 200 null "application/json; charset=utf-8" 222.2402ms
+2026-03-23 16:57:10 [Information] [TraceId: 74b96acad24142ce10f834aad822e866] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5062""""/api/dapper-employees/1013""" - null null
+2026-03-23 16:57:10 [Information] [TraceId: 74b96acad24142ce10f834aad822e866] Fetching employee by id from repository (id=1015).
+2026-03-23 16:57:10 [Information] [TraceId: 74b96acad24142ce10f834aad822e866] Executed DbCommand ("73"ms) [Parameters=["@__id_0='1015'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Id] = @__id_0"
+2026-03-23 16:57:10 [Information] [TraceId: 74b96acad24142ce10f834aad822e866] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5062""""/api/dapper-employees/1013""" - 401 null null 592.0694ms
+2026-03-23 17:11:53 [Information] [TraceId: ] Server laptop-2j11tsn1:82660:c0bd43b5 caught stopping signal...
+2026-03-23 17:11:53 [Information] [TraceId: ] Application is shutting down...
+2026-03-23 17:11:53 [Information] [TraceId: ] Server laptop-2j11tsn1:82660:c0bd43b5 All dispatchers stopped
+2026-03-23 17:11:53 [Information] [TraceId: ] Server laptop-2j11tsn1:82660:c0bd43b5 successfully reported itself as stopped in 7.8468 ms
+2026-03-23 17:11:53 [Information] [TraceId: ] Server laptop-2j11tsn1:82660:c0bd43b5 has been stopped in total 225.4056 ms
+2026-03-23 17:12:09 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-23 17:12:10 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-23 17:12:10 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 17:12:10 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-23 17:12:10 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-23 17:12:10 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-23 17:12:10 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-23 17:12:10 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-23 17:12:10 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-23 17:12:10 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-23 17:12:10 [Information] [TraceId: ] Server laptop-2j11tsn1:96960:b7e5eb79 successfully announced in 163.5905 ms
+2026-03-23 17:12:10 [Information] [TraceId: ] Server laptop-2j11tsn1:96960:b7e5eb79 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-23 17:12:10 [Information] [TraceId: ] Server laptop-2j11tsn1:96960:b7e5eb79 all the dispatchers started
+2026-03-23 17:12:32 [Information] [TraceId: fed31b6667a5302b06c6f5e2df4fdf79] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/all""" - null null
+2026-03-23 17:12:34 [Warning] [TraceId: fed31b6667a5302b06c6f5e2df4fdf79] Failed to determine the https port for redirect.
+2026-03-23 17:12:35 [Information] [TraceId: fed31b6667a5302b06c6f5e2df4fdf79] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-03-2026 11:34:29', Current time (UTC): '23-03-2026 11:42:35'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-03-23 17:12:36 [Information] [TraceId: fed31b6667a5302b06c6f5e2df4fdf79] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-03-2026 11:34:29', Current time (UTC): '23-03-2026 11:42:35'."
+2026-03-23 17:12:36 [Information] [TraceId: fed31b6667a5302b06c6f5e2df4fdf79] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+2026-03-23 17:12:36 [Information] [TraceId: fed31b6667a5302b06c6f5e2df4fdf79] AuthenticationScheme: "Bearer" was challenged.
+2026-03-23 17:12:36 [Information] [TraceId: fed31b6667a5302b06c6f5e2df4fdf79] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/all""" - 401 0 null 4253.9213ms
+2026-03-23 17:49:41 [Information] [TraceId: ] Server laptop-2j11tsn1:96960:b7e5eb79 caught stopping signal...
+2026-03-23 17:49:41 [Information] [TraceId: ] Application is shutting down...
+2026-03-23 17:49:41 [Information] [TraceId: ] Server laptop-2j11tsn1:96960:b7e5eb79 caught stopped signal...
+2026-03-23 17:49:42 [Information] [TraceId: ] Server laptop-2j11tsn1:96960:b7e5eb79 All dispatchers stopped
+2026-03-23 17:49:42 [Information] [TraceId: ] Server laptop-2j11tsn1:96960:b7e5eb79 successfully reported itself as stopped in 9.9585 ms
+2026-03-23 17:49:42 [Information] [TraceId: ] Server laptop-2j11tsn1:96960:b7e5eb79 has been stopped in total 897.6204 ms
+2026-03-23 17:50:02 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-23 17:50:03 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-23 17:50:03 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 17:50:03 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-23 17:50:03 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-23 17:50:03 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-23 17:50:03 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-23 17:50:03 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-23 17:50:03 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-23 17:50:03 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-23 17:50:04 [Information] [TraceId: ] Server laptop-2j11tsn1:86200:0f9e2956 successfully announced in 117.3358 ms
+2026-03-23 17:50:04 [Information] [TraceId: ] Server laptop-2j11tsn1:86200:0f9e2956 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-23 17:50:04 [Information] [TraceId: ] Server laptop-2j11tsn1:86200:0f9e2956 all the dispatchers started
+2026-03-23 17:50:04 [Information] [TraceId: d5ddde47d0d10865d9b8a368e33e2b1c] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-03-23 17:50:04 [Warning] [TraceId: d5ddde47d0d10865d9b8a368e33e2b1c] Failed to determine the https port for redirect.
+2026-03-23 17:50:04 [Information] [TraceId: d5ddde47d0d10865d9b8a368e33e2b1c] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 404 null null 237.7109ms
+2026-03-23 17:50:04 [Information] [TraceId: d5ddde47d0d10865d9b8a368e33e2b1c] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/", Response status code: 404
+2026-03-23 17:50:12 [Information] [TraceId: c64caa8021416500715359e2e2df6be5] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 17:50:12 [Information] [TraceId: c64caa8021416500715359e2e2df6be5] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 209.4896ms
+2026-03-23 17:50:12 [Information] [TraceId: 5453a5e1d5fb7aefd8227379bf85cf1a] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 17:50:12 [Information] [TraceId: 5453a5e1d5fb7aefd8227379bf85cf1a] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 2.5804ms
+2026-03-23 17:50:12 [Information] [TraceId: 5350e363bbea8d52cdccd8e56a1c78e5] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 17:50:12 [Information] [TraceId: 5350e363bbea8d52cdccd8e56a1c78e5] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 222.9771ms
+2026-03-23 17:50:36 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 17:50:36 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 17:50:36 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 17:50:36 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Login requested for email "user56@gmail.com".
+2026-03-23 17:50:36 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 17:50:37 [Warning] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-03-23 17:50:39 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Executed DbCommand ("69"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 17:50:39 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 17:50:39 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Generating refresh token.
+2026-03-23 17:50:39 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Creating refresh token entity for employee (id=1015).
+2026-03-23 17:50:39 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Hashing refresh token.
+2026-03-23 17:50:39 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 12:20:39).
+2026-03-23 17:50:40 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Executed DbCommand ("18"ms) [Parameters=["@p0='1015', @p1='2026-03-30T12:20:39.8836088Z', @p2='False', @p3='9RFiQ+3HqtTaDJsZyipfe96t8aB2a/TkwFHfWHh2Nns=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 17:50:40 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 17:50:40 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 17:50:40 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Executed action "AuthController.Login (MyApi)" in 3747.9208ms
+2026-03-23 17:50:40 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 17:50:40 [Information] [TraceId: d20f78b31d19b6bb2761c4e74cb74206] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 3909.8344ms
+2026-03-23 17:51:26 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - "application/json" 152
+2026-03-23 17:51:26 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Executing endpoint '"DapperEmployeesController.CreateEmployee (MyApi)"'
+2026-03-23 17:51:26 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Route matched with "{action = \"CreateEmployee\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEmployee(MyApi.DTO.Employee.Createemployeedto)" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 17:51:26 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Dapper CreateEmployee called (email="user@example.com").
+2026-03-23 17:51:26 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Creating employee through Dapper service (email="user@example.com", name="string").
+2026-03-23 17:51:27 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Creating employee using stored procedure (email="user@example.com", name="string").
+2026-03-23 17:51:27 [Error] [TraceId: 33f446120e75be21f03610a12a19d7a3] Dapper CreateEmployee failed.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'sp_CreateEmployee'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderAsyncCallback(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteScalarImplAsync[T](IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1242
+   at MyApi.Repository.Implementation.DapperEmployeeRepository.CreateAsync(Createemployeedto dto, String passwordHash, String hmacSecret) in C:\Users\HP\Desktop\asp.net\MyApi\Repository\Implementation\Dapperrepo.cs:line 91
+   at MyApi.Repository.Implementation.DapperEmployeeRepository.CreateAsync(Createemployeedto dto, String passwordHash, String hmacSecret) in C:\Users\HP\Desktop\asp.net\MyApi\Repository\Implementation\Dapperrepo.cs:line 91
+   at MyApi.Service.Implementation.DapperEmployeeService.CreateEmployeeAsync(Createemployeedto dto) in C:\Users\HP\Desktop\asp.net\MyApi\Service\Implementation\Dapperservice.cs:line 48
+   at DapperEmployeesController.CreateEmployee(Createemployeedto dto) in C:\Users\HP\Desktop\asp.net\MyApi\Controllers\DapperController.cs:line 71
+ClientConnectionId:76b95774-6f0c-42c7-af1b-0fe471b8ca4a
+Error Number:2812,State:62,Class:16
+2026-03-23 17:51:27 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Executing "ObjectResult", writing value of type '"System.String"'.
+2026-03-23 17:51:27 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Executed action "DapperEmployeesController.CreateEmployee (MyApi)" in 659.6983ms
+2026-03-23 17:51:27 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Executed endpoint '"DapperEmployeesController.CreateEmployee (MyApi)"'
+2026-03-23 17:51:27 [Information] [TraceId: 33f446120e75be21f03610a12a19d7a3] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - 500 null "text/plain; charset=utf-8" 798.5644ms
+2026-03-23 17:56:04 [Information] [TraceId: 873f042ce0f8ac494bf4c6c8daffec1a] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 17:56:04 [Information] [TraceId: 873f042ce0f8ac494bf4c6c8daffec1a] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 1.4372ms
+2026-03-23 17:56:04 [Information] [TraceId: 420bfb99759e27e94fbb47c7271fd644] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 17:56:04 [Information] [TraceId: 420bfb99759e27e94fbb47c7271fd644] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 2.2291ms
+2026-03-23 17:56:06 [Information] [TraceId: e3c9a141ef545add6e0d1bd5ed853596] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 17:56:06 [Information] [TraceId: e3c9a141ef545add6e0d1bd5ed853596] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 32.7844ms
+2026-03-23 18:00:06 [Information] [TraceId: ] Server laptop-2j11tsn1:86200:0f9e2956 caught stopping signal...
+2026-03-23 18:00:06 [Information] [TraceId: ] Application is shutting down...
+2026-03-23 18:00:07 [Information] [TraceId: ] Server laptop-2j11tsn1:86200:0f9e2956 caught stopped signal...
+2026-03-23 18:00:07 [Information] [TraceId: ] Server laptop-2j11tsn1:86200:0f9e2956 All dispatchers stopped
+2026-03-23 18:00:07 [Information] [TraceId: ] Server laptop-2j11tsn1:86200:0f9e2956 successfully reported itself as stopped in 31.016 ms
+2026-03-23 18:00:07 [Information] [TraceId: ] Server laptop-2j11tsn1:86200:0f9e2956 has been stopped in total 884.1738 ms
+2026-03-23 18:00:24 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-23 18:00:26 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-23 18:00:26 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 18:00:26 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-23 18:00:26 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-23 18:00:26 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-23 18:00:26 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-23 18:00:26 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-23 18:00:26 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-23 18:00:26 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-23 18:00:26 [Information] [TraceId: ] Server laptop-2j11tsn1:108104:d521bbf4 successfully announced in 87.7619 ms
+2026-03-23 18:00:26 [Information] [TraceId: ] Server laptop-2j11tsn1:108104:d521bbf4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-23 18:00:26 [Information] [TraceId: ] Server laptop-2j11tsn1:108104:d521bbf4 all the dispatchers started
+2026-03-23 18:00:26 [Information] [TraceId: 7e0d1aa4643330e639f8b223e7d2bd8c] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-03-23 18:00:26 [Warning] [TraceId: 7e0d1aa4643330e639f8b223e7d2bd8c] Failed to determine the https port for redirect.
+2026-03-23 18:00:27 [Information] [TraceId: 7e0d1aa4643330e639f8b223e7d2bd8c] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 404 null null 173.145ms
+2026-03-23 18:00:27 [Information] [TraceId: 7e0d1aa4643330e639f8b223e7d2bd8c] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/", Response status code: 404
+2026-03-23 18:00:40 [Information] [TraceId: 58bd713aa11fd3fb70238eef2758b894] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-23 18:00:41 [Information] [TraceId: 58bd713aa11fd3fb70238eef2758b894] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 251.8812ms
+2026-03-23 18:00:41 [Information] [TraceId: 260dee27aa7f9caa2d446f5525cd6a11] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-03-23 18:00:41 [Information] [TraceId: 260dee27aa7f9caa2d446f5525cd6a11] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 16547 "application/javascript; charset=utf-8" 3.0037ms
+2026-03-23 18:00:41 [Information] [TraceId: e4922897fbf8954bc15f5fc43907f311] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-23 18:00:41 [Information] [TraceId: e4922897fbf8954bc15f5fc43907f311] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 205.005ms
+2026-03-23 18:00:52 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 18:00:52 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:00:53 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 18:00:53 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Login requested for email "user56@gmail.com".
+2026-03-23 18:00:53 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 18:00:54 [Warning] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-03-23 18:00:55 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Executed DbCommand ("40"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Generating refresh token.
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Creating refresh token entity for employee (id=1015).
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Hashing refresh token.
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 12:30:56).
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Executed DbCommand ("12"ms) [Parameters=["@p0='1015', @p1='2026-03-30T12:30:56.4043702Z', @p2='False', @p3='hxNw9n6sm9D8VubOZXXmjbwg0Cdu0elLbPJKPf5ksAk=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Executed action "AuthController.Login (MyApi)" in 3848.106ms
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:00:56 [Information] [TraceId: e9baa8262adfe5808f03517b9f30fb0d] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 4063.6799ms
+2026-03-23 18:01:30 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - "application/json" 155
+2026-03-23 18:01:30 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Executing endpoint '"DapperEmployeesController.CreateEmployee (MyApi)"'
+2026-03-23 18:01:30 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Route matched with "{action = \"CreateEmployee\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEmployee(MyApi.DTO.Employee.Createemployeedto)" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 18:01:30 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Dapper CreateEmployee called (email="user@example.com").
+2026-03-23 18:01:30 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Creating employee through Dapper service (email="user@example.com", name="string123").
+2026-03-23 18:01:31 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Creating employee using stored procedure (email="user@example.com", name="string123").
+2026-03-23 18:01:31 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Fetching employee by id with Dapper (id=1019).
+2026-03-23 18:01:31 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Executing "CreatedAtActionResult", writing value of type '"MyApi.DTO.Employee.Reademployeedto"'.
+2026-03-23 18:01:31 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Executed action "DapperEmployeesController.CreateEmployee (MyApi)" in 717.9952ms
+2026-03-23 18:01:31 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Executed endpoint '"DapperEmployeesController.CreateEmployee (MyApi)"'
+2026-03-23 18:01:31 [Information] [TraceId: 4802045005d2f7c0635385dea5c05dce] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/dapper-employees""" - 201 null "application/json; charset=utf-8" 873.1449ms
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/1019""" - null null
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Executing endpoint '"DapperEmployeesController.GetEmployee (MyApi)"'
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Route matched with "{action = \"GetEmployee\", controller = \"DapperEmployees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployee(Int32)" on controller "DapperEmployeesController" ("MyApi").
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Dapper GetEmployee called (id=1019).
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Fetching employee by id through Dapper service (id=1019).
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Fetching employee by id with Dapper (id=1019).
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Executing "OkObjectResult", writing value of type '"MyApi.DTO.Employee.Reademployeedto"'.
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Executed action "DapperEmployeesController.GetEmployee (MyApi)" in 14.2771ms
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Executed endpoint '"DapperEmployeesController.GetEmployee (MyApi)"'
+2026-03-23 18:01:45 [Information] [TraceId: ebfe73b7c109e4f0d7ad1da2afadace3] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/dapper-employees/1019""" - 200 null "application/json; charset=utf-8" 27.2982ms
+2026-03-23 18:01:54 [Information] [TraceId: 17a44beb42cf449a29e9cffd75ef88ee] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/me""" - null null
+2026-03-23 18:01:54 [Information] [TraceId: 17a44beb42cf449a29e9cffd75ef88ee] Executing endpoint '"EmployeesController.GetLoggedInUser (MyApi)"'
+2026-03-23 18:01:54 [Information] [TraceId: 17a44beb42cf449a29e9cffd75ef88ee] Route matched with "{action = \"GetLoggedInUser\", controller = \"Employees\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetLoggedInUser()" on controller "EmployeesController" ("MyApi").
+2026-03-23 18:01:54 [Information] [TraceId: 17a44beb42cf449a29e9cffd75ef88ee] GetLoggedInUser called (userId="1015", email="user56@gmail.com", role="Admin").
+2026-03-23 18:01:54 [Information] [TraceId: 17a44beb42cf449a29e9cffd75ef88ee] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 18:01:54 [Information] [TraceId: 17a44beb42cf449a29e9cffd75ef88ee] Executed action "EmployeesController.GetLoggedInUser (MyApi)" in 156.6964ms
+2026-03-23 18:01:54 [Information] [TraceId: 17a44beb42cf449a29e9cffd75ef88ee] Executed endpoint '"EmployeesController.GetLoggedInUser (MyApi)"'
+2026-03-23 18:01:54 [Information] [TraceId: 17a44beb42cf449a29e9cffd75ef88ee] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees/me""" - 200 null "application/json; charset=utf-8" 168.7485ms
+2026-03-23 18:03:42 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 18:03:42 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:42 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 18:03:42 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Login requested for email "user56@gmail.com".
+2026-03-23 18:03:42 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 18:03:42 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Executed DbCommand ("29"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Generating refresh token.
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Creating refresh token entity for employee (id=1015).
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Hashing refresh token.
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 12:33:43).
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Executed DbCommand ("9"ms) [Parameters=["@p0='1015', @p1='2026-03-30T12:33:43.1252766Z', @p2='False', @p3='YWCif8hz7DwqFg71WWSRsidJHlM8MtyzFylP+j0xlyg=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Executed action "AuthController.Login (MyApi)" in 337.7332ms
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:43 [Information] [TraceId: d281ec5e5b47acb72a55d61335b1d23a] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 347.871ms
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Login requested for email "user56@gmail.com".
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Executed DbCommand ("11"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Generating refresh token.
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Creating refresh token entity for employee (id=1015).
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Hashing refresh token.
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 12:33:44).
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Executed DbCommand ("7"ms) [Parameters=["@p0='1015', @p1='2026-03-30T12:33:44.6801916Z', @p2='False', @p3='EyP5dgOWIlN/QNBhXMXHj4nAN7g/MalAInJT1QLGrzM=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Executed action "AuthController.Login (MyApi)" in 436.4981ms
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:44 [Information] [TraceId: ae0abd58a044744895723116f5ed6f48] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 440.6423ms
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Login requested for email "user56@gmail.com".
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Executed DbCommand ("48"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Generating refresh token.
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Creating refresh token entity for employee (id=1015).
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Hashing refresh token.
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 12:33:45).
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Executed DbCommand ("27"ms) [Parameters=["@p0='1015', @p1='2026-03-30T12:33:45.4312635Z', @p2='False', @p3='7mP9prhU7q5JXRrJAc/QURihe9hV+KOqPRg8gv9WdD8=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Executed action "AuthController.Login (MyApi)" in 368.4406ms
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:45 [Information] [TraceId: a330efd5e328644170e3696ba9d3722e] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 371.5612ms
+2026-03-23 18:03:45 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 18:03:45 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:45 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 18:03:45 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Login requested for email "user56@gmail.com".
+2026-03-23 18:03:45 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 18:03:45 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Executed DbCommand ("24"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Generating refresh token.
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Creating refresh token entity for employee (id=1015).
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Hashing refresh token.
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 12:33:46).
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Executed DbCommand ("35"ms) [Parameters=["@p0='1015', @p1='2026-03-30T12:33:46.0965341Z', @p2='False', @p3='lnc/Gh3bObSFGZI/NG7KyPyDJrn3kf4R/kt3yuyYl2k=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Executed action "AuthController.Login (MyApi)" in 305.5434ms
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:46 [Information] [TraceId: 185a02b1a3a6d3addbe1e380d2e568c1] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 309.0224ms
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Login requested for email "user56@gmail.com".
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Fetching employee by email from repository (email="user56@gmail.com").
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Executed DbCommand ("37"ms) [Parameters=["@__email_0='user56@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[HmacSecret], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecret], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Creating access token for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Generating refresh token.
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Creating refresh token entity for employee (id=1015).
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Hashing refresh token.
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Persisting refresh token for employee (employeeId=1015, expires=03/30/2026 12:33:46).
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Executed DbCommand ("25"ms) [Parameters=["@p0='1015', @p1='2026-03-30T12:33:46.7163592Z', @p2='False', @p3='ynCOn8rFAarIExAY1s5XZC4GTXOfBEA629ksM44QDVg=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Login succeeded for employee (id=1015, email="user56@gmail.com").
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Executed action "AuthController.Login (MyApi)" in 325.2271ms
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-23 18:03:46 [Information] [TraceId: 02b774642b26d671c3b78bbf17d69447] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 328.0673ms
+2026-03-23 18:03:46 [Information] [TraceId: 1d1b8346fcaaa89caf86f8bc35ee8f82] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 57
+2026-03-23 18:03:46 [Information] [TraceId: 1d1b8346fcaaa89caf86f8bc35ee8f82] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 503 0 null 3.567ms
+2026-03-23 18:03:52 [Information] [TraceId: ] Server laptop-2j11tsn1:108104:d521bbf4 caught stopping signal...
+2026-03-23 18:03:52 [Information] [TraceId: ] Application is shutting down...
+2026-03-23 18:03:53 [Information] [TraceId: ] Server laptop-2j11tsn1:108104:d521bbf4 caught stopped signal...
+2026-03-23 18:03:53 [Information] [TraceId: ] Server laptop-2j11tsn1:108104:d521bbf4 All dispatchers stopped
+2026-03-23 18:03:53 [Information] [TraceId: ] Server laptop-2j11tsn1:108104:d521bbf4 successfully reported itself as stopped in 29.0617 ms
+2026-03-23 18:03:53 [Information] [TraceId: ] Server laptop-2j11tsn1:108104:d521bbf4 has been stopped in total 1024.8988 ms
