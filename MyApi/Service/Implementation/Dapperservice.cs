@@ -77,6 +77,13 @@ public class DapperEmployeeService : IDapperservice
         return await _repository.GetByIdAsync(id);
     }
 
+    public async Task<IEnumerable<Reademployeedto>> GetEmployeesWithProjectsAsync()
+    {
+        _logger.LogInformation("Fetching employees with projects (many-to-many)");
+
+        return await _repository.GetEmployeesWithProjectsAsync();
+    }
+
     public Task<bool> DeleteEmployeeAsync(int id)
     {
         _logger.LogInformation("Deleting employee through Dapper service (id={EmployeeId}).", id);

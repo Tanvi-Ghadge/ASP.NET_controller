@@ -21,7 +21,12 @@ public class DapperEmployeesController : ControllerBase
         _logger = logger;
     }
 
-
+    [HttpGet("with-projects")]
+    public async Task<IActionResult> GetEmployeesWithProjects()
+    {
+        var data = await _service.GetEmployeesWithProjectsAsync();
+        return Ok(data);
+    }
 
     [HttpGet("all")]
     public async Task<IActionResult> GetAllEmployees()

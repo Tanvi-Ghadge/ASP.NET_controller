@@ -16,7 +16,6 @@ public interface Iemployeerepository
      void Update(Employee employee);
 
     void Delete(Employee employee);
-    
 
     Task SaveAsync();
 }

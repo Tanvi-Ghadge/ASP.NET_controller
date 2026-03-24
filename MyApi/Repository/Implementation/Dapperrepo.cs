@@ -147,6 +147,65 @@ public class DapperEmployeeRepository : IDapperrepo
         return rows > 0;
     }
 
+    public async Task<IEnumerable<Reademployeedto>> GetEmployeesWithProjectsAsync()
+    {
+        const string sql = @"
+        SELECT 
+            e.Id,
+            e.Name,
+            e.Email,
+            e.Salary,
+
+            d.Name AS DepartmentName,
+            m.Name AS ManagerName,
+
+            p.Id AS ProjectId,
+            p.Name,
+            p.Budget,
+            p.StartDate
+
+        FROM Employees e
+        INNER JOIN Departments d ON e.DepartmentId = d.Id
+        LEFT JOIN Employees m ON e.ManagerId = m.Id
+
+        INNER JOIN EmployeeProjects ep ON e.Id = ep.EmployeeId
+        INNER JOIN Projects p ON ep.ProjectId = p.Id;
+        ";
+
+        await using var connection = CreateConnection();
+
+        var dict = new Dictionary<int, Reademployeedto>();
+
+        var result = await connection.QueryAsync<
+            Reademployeedto,
+            ProjectDto,
+            Reademployeedto
+        >(
+            sql,
+            (emp, proj) =>
+            {
+                //  Deduplicate employee
+                if (!dict.TryGetValue(emp.Id, out var existing))
+                {
+                    existing = emp;
+                    existing.Projects = new List<ProjectDto>();
+                    dict.Add(emp.Id, existing);
+                }
+
+                //  Add project if exists
+                if (proj != null && proj.ProjectId != 0)
+                {
+                    existing.Projects.Add(proj);
+                }
+
+                return existing;
+            },
+            splitOn: "ProjectId"
+        );
+
+        return dict.Values;
+    }
+
     private SqlConnection CreateConnection()
     {
         return new SqlConnection(_db.ConnectionString);

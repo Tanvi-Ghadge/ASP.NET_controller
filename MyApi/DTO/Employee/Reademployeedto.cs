@@ -10,5 +10,5 @@ public record class Reademployeedto
     public decimal Salary { get; set; }
     public string DepartmentName { get; set; } = string.Empty;
     public string? ManagerName { get; set; }
-   
+   public List<ProjectDto> Projects { get; set; } = new();
 }
