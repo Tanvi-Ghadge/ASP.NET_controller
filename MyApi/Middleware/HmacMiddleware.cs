@@ -1,87 +1,102 @@
-using System.Security.Claims;
 using System.Text;
-using MyApi.Repository.Interface;
-using MyApi.Service.Implementation;
+using System.Security.Cryptography;
+using MyApi.data;
 using MyApi.Service.Interface;
+using Microsoft.EntityFrameworkCore; 
 public class HmacMiddleware
 {
     private readonly RequestDelegate _next;
-    public HmacMiddleware(
-        RequestDelegate next
-        )
+
+    public HmacMiddleware(RequestDelegate next)
     {
         _next = next;
     }
-    public async Task Invoke(HttpContext context, IHmacservice _hmacservice, Iemployeerepository _employeeRepo)
+
+    public async Task Invoke(
+        HttpContext context,
+        Dbcontext db,
+        IHmacservice hmacService,
+        INonceservice nonceService)
     {
-        var endpoint = context.GetEndpoint();
-        var requiresHmac = endpoint?.Metadata.GetMetadata<RequireHmacAttribute>();
+        var path = context.Request.Path.Value!.ToLower();
 
-        if (requiresHmac != null)
+        if (path!.Contains("/auth"))
         {
-            //  1. Get user from JWT
-            var userId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-            if (userId == null)
-            {
-                context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("Unauthorized");
-                return;
-            }
-
-            var user = await _employeeRepo.GetByIdAsync(int.Parse(userId));
-
-            if (user == null || string.IsNullOrEmpty(user.HmacSecret))
-            {
-                context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("User not found or no HMAC secret");
-                return;
-            }
-
-            var secret = user.HmacSecret;
-
-            //  2. Headers
-            var signature = context.Request.Headers["X-Signature"].FirstOrDefault();
-            var timestamp = context.Request.Headers["X-Timestamp"].FirstOrDefault();
-
-            if (string.IsNullOrEmpty(signature) || string.IsNullOrEmpty(timestamp))
-            {
-                context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("Missing HMAC headers");
-                return;
-            }
-
-            //  3. Replay protection (timestamp)
-            if (!DateTime.TryParse(timestamp, out var requestTime) ||
-                (DateTime.UtcNow - requestTime).TotalMinutes > 5)
-            {
-                context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("Request expired");
-                return;
-            }
-
-            //  4. Read body safely
-            context.Request.EnableBuffering();
-
-            using var reader = new StreamReader(context.Request.Body, Encoding.UTF8, leaveOpen: true);
-            var body = await reader.ReadToEndAsync();
-            context.Request.Body.Position = 0;
-
-            //  5. Build data string
-            var data = context.Request.Method +
-                       context.Request.Path +
-                       body +
-                       timestamp;
-
-            var computedSignature = _hmacservice.GenerateSignature(data, secret);
-
-            if (computedSignature != signature)
-            {
-                context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("Invalid signature");
-                return;
-            }
+            await _next(context);
+            return;
         }
+        if (path!.Contains("/dapper-employees"))
+        {
+            await _next(context);
+            return;
+        }
+
+        var apiKey = context.Request.Headers["X-API-KEY"].FirstOrDefault();
+        var signature = context.Request.Headers["X-SIGNATURE"].FirstOrDefault();
+        var timestamp = context.Request.Headers["X-TIMESTAMP"].FirstOrDefault();
+        var nonce = context.Request.Headers["X-NONCE"].FirstOrDefault();
+
+        if (apiKey == null || signature == null || timestamp == null || nonce == null)
+        {
+            context.Response.StatusCode = 401;
+            await context.Response.WriteAsync("Missing headers");
+            return;
+        }
+
+        var employee = db.Employees.FirstOrDefault(e => e.ApiKey == apiKey);
+
+        if (employee == null)
+        {
+            context.Response.StatusCode = 401;
+            await context.Response.WriteAsync("user not found with apikey");
+            return;
+        }
+
+        //Replay check
+        if (await nonceService.IsReplayAsync(nonce))
+        {
+            context.Response.StatusCode = 401;
+            await context.Response.WriteAsync("Replay detected");
+            return;
+        }
+
+        // ⏱️ Timestamp check
+        var requestTime = DateTimeOffset.FromUnixTimeSeconds(long.Parse(timestamp));
+
+        if (DateTime.UtcNow - requestTime > TimeSpan.FromMinutes(5))
+        {
+            context.Response.StatusCode = 401;
+            await context.Response.WriteAsync("Request expired");
+            return;
+        }
+
+        var secret = hmacService.Decrypt(employee.HmacSecretEncrypted);
+
+        context.Request.EnableBuffering();
+
+        string body = "";
+        using (var reader = new StreamReader(context.Request.Body, Encoding.UTF8, leaveOpen: true))
+        {
+            body = await reader.ReadToEndAsync();
+            context.Request.Body.Position = 0;
+        }
+
+       var method = context.Request.Method.ToUpper();
+        
+
+        var data = $"{method}{path}{body}{timestamp}{nonce}";
+
+        var isValid = hmacService.VerifySignature(secret, data, signature);
+
+        if (!isValid)
+        {
+            context.Response.StatusCode = 401;
+            await context.Response.WriteAsync("Invalid signature-no match");
+            return;
+        }
+
+        // ✅ Store nonce
+        await nonceService.StoreNonceAsync(nonce, TimeSpan.FromMinutes(5));
 
         await _next(context);
     }

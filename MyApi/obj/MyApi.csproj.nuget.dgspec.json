@@ -103,6 +103,10 @@
               "target": "Package",
               "version": "[8.0.0-nblumhardt-02322, )"
             },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.12.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"

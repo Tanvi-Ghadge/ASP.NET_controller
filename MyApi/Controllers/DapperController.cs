@@ -117,7 +117,7 @@ public class DapperEmployeesController : ControllerBase
     }
 
     [Authorize(Roles = "Admin")]
-    [RequireHmac]
+    
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteEmployee(int id)
     {

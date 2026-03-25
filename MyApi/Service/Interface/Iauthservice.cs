@@ -5,7 +5,7 @@ namespace MyApi.Service.Interface;
 
 public interface Iauthservice
 {
-    Task<(string accessToken, string rawrefreshToken)> Register(Registerdto dto);
+    Task<(string accessToken, string rawrefreshToken,string apiKey, string secret)> Register(Registerdto dto);
 
     Task<(string accessToken, string rawrefreshToken)> Login(Logindto dto);
 

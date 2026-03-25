@@ -14,7 +14,9 @@ public class Employee
     public string role { get; set; } = "Employee";
 
     public decimal Salary { get; set; }
-    public string HmacSecret { get; set; } = null!;
+    public string ApiKey { get; set; } = null!;
+
+    public string HmacSecretEncrypted { get; set; } = null!;
     public int DepartmentId { get; set; }
 
     public int? ManagerId { get; set; }

@@ -128,7 +128,6 @@ public class EmployeesController : ControllerBase
 
     // Only Admin can delete
     [Authorize(Roles = "Admin")]
-    [RequireHmac]    //for HMAC protection on delete endpoint
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteEmployee(int id)
     {

@@ -19,12 +19,14 @@ public class AuthController : ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register(Registerdto dto)
     {
-        var (accessToken, refreshToken) = await _authService.Register(dto);
+        var (accessToken, refreshToken, apiKey, secret) = await _authService.Register(dto);
 
         return Ok(new
         {
             access_token = accessToken,
-            refresh_token = refreshToken
+            refresh_token = refreshToken,
+            api_key = apiKey,
+            hmac_secret = secret
         });
     }
 

@@ -28,7 +28,7 @@ public class AuthService : Iauthservice
         _logger = logger;
     }
 
-    public async Task<(string accessToken, string rawrefreshToken)> Register(Registerdto dto)
+    public async Task<(string accessToken, string rawrefreshToken, string apiKey, string secret)> Register(Registerdto dto)
     {
         _logger.LogInformation("Register requested for email {Email}.", dto.Email);
         var existingUser = await _employeeRepo.GetByEmailAsync(dto.Email);
@@ -38,14 +38,15 @@ public class AuthService : Iauthservice
             throw new Exception("Email already in use");
         }
         var hash = BCrypt.Net.BCrypt.HashPassword(dto.Password);
-
+        var (apiKey, secret) = _hmacservice.GenerateCredentials();
         var employee = new Employee
         {
             Name = dto.Name,
             Email = dto.Email,
             PasswordHash = hash,
             role = dto.Role,
-            HmacSecret = _hmacservice.GenerateHmacSecret(),
+            ApiKey = apiKey,
+            HmacSecretEncrypted = _hmacservice.Encrypt(secret),
             DepartmentId = dto.DepartmentId
         };
         await _employeeRepo.AddAsync(employee);
@@ -60,7 +61,7 @@ public class AuthService : Iauthservice
         await _refreshRepo.Add(entity);
         _logger.LogInformation("Registration completed for employee (id={EmployeeId}, email={Email}).", employee.Id, employee.Email);
         
-        return (accessToken, rawrefreshToken);
+        return (accessToken, rawrefreshToken, apiKey, secret);
         
         
     }

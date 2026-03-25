@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using System.IO.Compression;
 using Serilog;
 using MyApi.Middleware;
+using StackExchange.Redis;
 using System.Data;
 using Microsoft.Data.SqlClient;
 var builder = WebApplication.CreateBuilder(args);
@@ -79,6 +80,12 @@ builder.Services.AddDbContext<Dbcontext>(options =>
            .EnableSensitiveDataLogging();
 });
 
+//  Redis
+builder.Services.AddSingleton<IConnectionMultiplexer>(
+    ConnectionMultiplexer.Connect(builder.Configuration["Redis:Connection"])
+);
+
+builder.Services.AddScoped<INonceservice, Nonceservice>();
 
 //hangfire for background jobs
 builder.Services.AddHangfire(config =>
