@@ -214,4 +214,91 @@ public async Task<List<Reademployeedto>> GetAllEmployeesAsync()
 
         return true;
     }
+
+    public async Task<List<Reademployeedto>> SearchEmployeesByDepartmentAsync(string department)
+    {
+        if (string.IsNullOrWhiteSpace(department))
+        {
+            _logger.LogWarning("SearchEmployeesByDepartment called with empty department.");
+            return new List<Reademployeedto>();
+        }
+
+        var term = department.Trim().ToLowerInvariant();
+        _logger.LogInformation("Searching employees by department (department={Department}).", department);
+
+        var data = await _repository.GetAll()
+            .Where(e => e.Department != null && e.Department.Name.ToLower().Contains(term))
+            .Select(e => new Reademployeedto
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Email = e.Email,
+                Salary = e.Salary,
+                DepartmentName = e.Department != null ? e.Department.Name : string.Empty,
+                ManagerName = e.Manager != null ? e.Manager.Name : null
+            })
+            .ToListAsync();
+
+        _logger.LogInformation(
+            "Department search completed (department={Department}, resultCount={ResultCount}).",
+            department,
+            data.Count);
+
+        return data;
+    }
+
+    public async Task<Reademployeedto?> UpdateEmployeeDetailsAsync(
+        int id,
+        string? name = null,
+        string? email = null,
+        decimal? salary = null,
+        int? departmentId = null,
+        string? departmentName = null,
+        int? managerId = null)
+    {
+        _logger.LogInformation(
+            "Updating employee details in service (id={EmployeeId}, departmentName={DepartmentName}).",
+            id,
+            departmentName);
+
+        var employee = await _repository.GetByIdAsync(id);
+        if (employee == null)
+        {
+            _logger.LogWarning("Update details skipped because employee was not found (id={EmployeeId}).", id);
+            return null;
+        }
+
+        var resolvedDepartmentId = departmentId ?? employee.DepartmentId;
+
+        if (!departmentId.HasValue && !string.IsNullOrWhiteSpace(departmentName))
+        {
+            var term = departmentName.Trim().ToLowerInvariant();
+            var matchedDepartmentId = await _repository.GetAll()
+                .Where(e => e.Department != null && e.Department.Name.ToLower().Contains(term))
+                .Select(e => (int?)e.DepartmentId)
+                .Distinct()
+                .FirstOrDefaultAsync();
+
+            if (!matchedDepartmentId.HasValue)
+            {
+                _logger.LogWarning(
+                    "Update details failed because department was not found (departmentName={DepartmentName}).",
+                    departmentName);
+                return null;
+            }
+
+            resolvedDepartmentId = matchedDepartmentId.Value;
+        }
+
+        var dto = new Updateemployeedto
+        {
+            Name = name ?? employee.Name,
+            Email = email ?? employee.Email,
+            Salary = salary ?? employee.Salary,
+            DepartmentId = resolvedDepartmentId,
+            ManagerId = managerId ?? employee.ManagerId
+        };
+
+        return await UpdateEmployeeAsync(id, dto);
+    }
 }

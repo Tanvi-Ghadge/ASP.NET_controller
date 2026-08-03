@@ -17,10 +17,160 @@ namespace MyApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.25")
+                .HasAnnotation("ProductVersion", "8.0.29")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("MyApi.models.entities.AiMemory", b =>
+                {
+                    b.Property<Guid>("MemoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UpdatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.HasKey("MemoryId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId", "Key")
+                        .IsUnique();
+
+                    b.ToTable("AiMemories", (string)null);
+                });
+
+            modelBuilder.Entity("MyApi.models.entities.ApprovalHistoryEntity", b =>
+                {
+                    b.Property<Guid>("HistoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<string>("Actor")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<Guid>("ApprovalRequestId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("Timestamp")
+                        .HasColumnType("datetimeoffset");
+
+                    b.HasKey("HistoryId");
+
+                    b.HasIndex("ApprovalRequestId");
+
+                    b.ToTable("ApprovalHistory", (string)null);
+                });
+
+            modelBuilder.Entity("MyApi.models.entities.ApprovalRequestEntity", b =>
+                {
+                    b.Property<Guid>("ApprovalRequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ApprovalGroup")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("CheckpointId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CorrelationId")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<DateTimeOffset?>("DecidedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("DecidedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<DateTimeOffset?>("ExpiresAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PayloadJson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("RequestedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<int>("RequiredApprovals")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SessionId")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("WorkflowDefinitionId")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<Guid>("WorkflowInstanceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ApprovalRequestId");
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("WorkflowInstanceId");
+
+                    b.ToTable("ApprovalRequests", (string)null);
+                });
 
             modelBuilder.Entity("MyApi.models.entities.Company", b =>
                 {
@@ -225,6 +375,97 @@ namespace MyApi.Migrations
                     b.ToTable("RefreshTokens");
                 });
 
+            modelBuilder.Entity("MyApi.models.entities.WorkflowCheckpointEntity", b =>
+                {
+                    b.Property<Guid>("CheckpointId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ApprovalRequestId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CompletedStepsJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CorrelationId")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CurrentMessage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExecutionMetadataJson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MemoryJson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ResumeStepIndex")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SelectedAgentKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SessionId")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<DateTimeOffset>("UpdatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("VariablesJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WorkflowDefinitionId")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<Guid>("WorkflowInstanceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("WorkflowName")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("CheckpointId");
+
+                    b.HasIndex("WorkflowInstanceId")
+                        .IsUnique();
+
+                    b.ToTable("WorkflowCheckpoints", (string)null);
+                });
+
+            modelBuilder.Entity("MyApi.models.entities.ApprovalHistoryEntity", b =>
+                {
+                    b.HasOne("MyApi.models.entities.ApprovalRequestEntity", "ApprovalRequest")
+                        .WithMany("History")
+                        .HasForeignKey("ApprovalRequestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApprovalRequest");
+                });
+
             modelBuilder.Entity("MyApi.models.entities.Department", b =>
                 {
                     b.HasOne("MyApi.models.entities.Company", "Company")
@@ -311,6 +552,11 @@ namespace MyApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("MyApi.models.entities.ApprovalRequestEntity", b =>
+                {
+                    b.Navigation("History");
                 });
 
             modelBuilder.Entity("MyApi.models.entities.Company", b =>

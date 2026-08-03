@@ -20,6 +20,7 @@ using MyApi.Middleware;
 using StackExchange.Redis;
 using System.Data;
 using Microsoft.Data.SqlClient;
+using MyApi.AI;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -153,6 +154,9 @@ builder.Services.AddScoped<IDapperrepo, DapperEmployeeRepository>();
 builder.Services.AddScoped<IDapperservice, DapperEmployeeService>();
 builder.Services.AddMemoryCache();
 
+// Microsoft Agent Framework — conversational EmployeeAgent (no tools yet)
+builder.Services.AddEmployeeAgentFramework(builder.Configuration);
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>
@@ -198,5 +202,6 @@ app.UseAuthorization();
 app.UseMiddleware<HmacMiddleware>();
 app.UseHangfireDashboard();
 app.MapControllers();
+app.MapHub<MyApi.AI.Streaming.AgentHub>(MyApi.AI.Streaming.StreamingHub.HubPath);
 
 app.Run();

@@ -18,6 +18,10 @@ public class Dbcontext : DbContext
     public DbSet<Projects> Projects { get; set; }
     public DbSet<EmployeeProjects> EmployeeProjects { get; set; }
     public DbSet<Refreshtoken> RefreshTokens { get; set; }
+    public DbSet<AiMemory> AiMemories { get; set; }
+    public DbSet<WorkflowCheckpointEntity> WorkflowCheckpoints { get; set; }
+    public DbSet<ApprovalRequestEntity> ApprovalRequests { get; set; }
+    public DbSet<ApprovalHistoryEntity> ApprovalHistory { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -99,6 +103,59 @@ public class Dbcontext : DbContext
         .Property(e => e.Name)
         .IsRequired()
         .HasMaxLength(100);
+
+        modelBuilder.Entity<AiMemory>(entity =>
+        {
+            entity.ToTable("AiMemories");
+            entity.HasKey(m => m.MemoryId);
+            entity.Property(m => m.UserId).IsRequired().HasMaxLength(128);
+            entity.Property(m => m.Key).IsRequired().HasMaxLength(128);
+            entity.Property(m => m.Value).IsRequired().HasMaxLength(2000);
+            entity.HasIndex(m => new { m.UserId, m.Key }).IsUnique();
+            entity.HasIndex(m => m.UserId);
+        });
+
+        modelBuilder.Entity<WorkflowCheckpointEntity>(entity =>
+        {
+            entity.ToTable("WorkflowCheckpoints");
+            entity.HasKey(c => c.CheckpointId);
+            entity.HasIndex(c => c.WorkflowInstanceId).IsUnique();
+            entity.Property(c => c.WorkflowDefinitionId).IsRequired().HasMaxLength(128);
+            entity.Property(c => c.WorkflowName).IsRequired().HasMaxLength(256);
+            entity.Property(c => c.SessionId).IsRequired().HasMaxLength(128);
+            entity.Property(c => c.UserId).IsRequired().HasMaxLength(128);
+            entity.Property(c => c.CorrelationId).IsRequired().HasMaxLength(64);
+            entity.Property(c => c.Status).IsRequired().HasMaxLength(64);
+            entity.Property(c => c.CompletedStepsJson).IsRequired();
+            entity.Property(c => c.VariablesJson).IsRequired();
+            entity.Property(c => c.CurrentMessage).IsRequired();
+        });
+
+        modelBuilder.Entity<ApprovalRequestEntity>(entity =>
+        {
+            entity.ToTable("ApprovalRequests");
+            entity.HasKey(a => a.ApprovalRequestId);
+            entity.HasIndex(a => a.WorkflowInstanceId);
+            entity.HasIndex(a => a.Status);
+            entity.Property(a => a.WorkflowDefinitionId).IsRequired().HasMaxLength(128);
+            entity.Property(a => a.CorrelationId).IsRequired().HasMaxLength(64);
+            entity.Property(a => a.SessionId).IsRequired().HasMaxLength(128);
+            entity.Property(a => a.UserId).IsRequired().HasMaxLength(128);
+            entity.Property(a => a.Title).IsRequired().HasMaxLength(256);
+            entity.Property(a => a.Description).IsRequired().HasMaxLength(2000);
+            entity.HasMany(a => a.History)
+                .WithOne(h => h.ApprovalRequest)
+                .HasForeignKey(h => h.ApprovalRequestId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<ApprovalHistoryEntity>(entity =>
+        {
+            entity.ToTable("ApprovalHistory");
+            entity.HasKey(h => h.HistoryId);
+            entity.Property(h => h.Action).IsRequired().HasMaxLength(64);
+            entity.Property(h => h.Actor).IsRequired().HasMaxLength(128);
+        });
     }
     
 }

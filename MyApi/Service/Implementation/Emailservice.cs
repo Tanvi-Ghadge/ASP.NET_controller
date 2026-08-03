@@ -19,4 +19,16 @@ public class Emailservice: Iemailservice
         await Task.Delay(2000); // simulate sending email
         _logger.LogInformation("Welcome email completed for employee (email={Email}).", email);
     }
+
+    public async Task SendNotificationEmail(string email, string subject, string body)
+    {
+        _logger.LogInformation(
+            "Sending notification email (email={Email}, subject={Subject}, bodyLength={BodyLength}).",
+            email,
+            subject,
+            body?.Length ?? 0);
+
+        await Task.Delay(500);
+        _logger.LogInformation("Notification email completed (email={Email}).", email);
+    }
 }

@@ -2424,3 +2424,185 @@ ORDER BY [t].[Id]"
 2026-03-25 17:41:11 [Information] [TraceId: ] Server laptop-2j11tsn1:225524:a9dee8f9 All dispatchers stopped
 2026-03-25 17:41:11 [Information] [TraceId: ] Server laptop-2j11tsn1:225524:a9dee8f9 successfully reported itself as stopped in 8.5897 ms
 2026-03-25 17:41:11 [Information] [TraceId: ] Server laptop-2j11tsn1:225524:a9dee8f9 has been stopped in total 582.8718 ms
+2026-03-26 11:05:22 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-26 11:05:25 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-26 11:05:26 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-26 11:05:26 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-26 11:05:26 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-26 11:05:26 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-26 11:05:26 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-26 11:05:26 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-26 11:05:26 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-26 11:05:26 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-26 11:05:26 [Information] [TraceId: ] Server laptop-2j11tsn1:29452:fb3feb6e successfully announced in 308.8162 ms
+2026-03-26 11:05:26 [Information] [TraceId: ] Server laptop-2j11tsn1:29452:fb3feb6e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-26 11:05:26 [Information] [TraceId: ] Server laptop-2j11tsn1:29452:fb3feb6e all the dispatchers started
+2026-03-26 11:05:48 [Information] [TraceId: 98c86d6595a330c6f0c119c4047b740a] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees""" - null null
+2026-03-26 11:05:48 [Warning] [TraceId: 98c86d6595a330c6f0c119c4047b740a] Failed to determine the https port for redirect.
+2026-03-26 11:05:48 [Information] [TraceId: 98c86d6595a330c6f0c119c4047b740a] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '25-03-2026 12:12:54', Current time (UTC): '26-03-2026 05:35:48'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-03-26 11:05:48 [Information] [TraceId: 98c86d6595a330c6f0c119c4047b740a] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '25-03-2026 12:12:54', Current time (UTC): '26-03-2026 05:35:48'."
+2026-03-26 11:05:48 [Information] [TraceId: 98c86d6595a330c6f0c119c4047b740a] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+2026-03-26 11:05:48 [Information] [TraceId: 98c86d6595a330c6f0c119c4047b740a] AuthenticationScheme: "Bearer" was challenged.
+2026-03-26 11:05:48 [Information] [TraceId: 98c86d6595a330c6f0c119c4047b740a] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees""" - 401 0 null 343.6994ms
+2026-03-26 11:06:00 [Information] [TraceId: da91d2b25f3ef9e3b2d14cbfed3c89f9] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-03-26 11:06:00 [Information] [TraceId: da91d2b25f3ef9e3b2d14cbfed3c89f9] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 401 null null 318.0794ms
+2026-03-26 11:06:00 [Information] [TraceId: ace9a927b7b4454e62a0189ae414bedd] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/favicon.ico""" - null null
+2026-03-26 11:06:00 [Information] [TraceId: ace9a927b7b4454e62a0189ae414bedd] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/favicon.ico""" - 401 null null 17.1068ms
+2026-03-26 11:06:04 [Information] [TraceId: 3441747a2ee95f4bd3f0190feae135b7] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-03-26 11:06:04 [Information] [TraceId: 3441747a2ee95f4bd3f0190feae135b7] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 177.347ms
+2026-03-26 11:06:04 [Information] [TraceId: 7c74edad23d453bfde5956753f123781] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-03-26 11:06:04 [Information] [TraceId: 7c74edad23d453bfde5956753f123781] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 171.0574ms
+2026-03-26 11:06:17 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - "application/json" 55
+2026-03-26 11:06:17 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Executing endpoint '"AuthController.Login (MyApi)"'
+2026-03-26 11:06:17 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MyApi.DTO.Employee.Logindto)" on controller "AuthController" ("MyApi").
+2026-03-26 11:06:17 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Login requested for email "hmac@gmail.com".
+2026-03-26 11:06:17 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Fetching employee by email from repository (email="hmac@gmail.com").
+2026-03-26 11:06:18 [Warning] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-03-26 11:06:19 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Executed DbCommand ("47"ms) [Parameters=["@__email_0='hmac@gmail.com' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ApiKey], [e].[DepartmentId], [e].[Email], [e].[HmacSecretEncrypted], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role], [d].[Id], [d].[CompanyId], [d].[ManagerId], [d].[Name], [e0].[Id], [e0].[ApiKey], [e0].[DepartmentId], [e0].[Email], [e0].[HmacSecretEncrypted], [e0].[ManagerId], [e0].[Name], [e0].[PasswordHash], [e0].[Salary], [e0].[role]
+FROM [Employees] AS [e]
+INNER JOIN [Departments] AS [d] ON [e].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [e].[ManagerId] = [e0].[Id]
+WHERE [e].[Email] = @__email_0"
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Creating access token for employee (id=1021, email="hmac@gmail.com").
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Generating refresh token.
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Creating refresh token entity for employee (id=1021).
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Hashing refresh token.
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Persisting refresh token for employee (employeeId=1021, expires=04/02/2026 05:36:20).
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Executed DbCommand ("19"ms) [Parameters=["@p0='1021', @p1='2026-04-02T05:36:20.1099396Z', @p2='False', @p3='JEpqzmHiFZFvzjfEvsWyL3YDwyWUGbZt1G6lbQf4QAE=' (Nullable = false) (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([EmployeeId], [Expires], [IsRevoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);"
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Login succeeded for employee (id=1021, email="hmac@gmail.com").
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Executed action "AuthController.Login (MyApi)" in 3320.6756ms
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Executed endpoint '"AuthController.Login (MyApi)"'
+2026-03-26 11:06:20 [Information] [TraceId: 67eac5f69aba4cbf9c4de4b803c723a5] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/api/Auth/login""" - 200 null "application/json; charset=utf-8" 3468.1783ms
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees""" - null null
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Executed DbCommand ("8"ms) [Parameters=["@__apiKey_0='245f0b3c-bf54-4fea-ac44-e7d7b4fef11e' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ApiKey], [e].[DepartmentId], [e].[Email], [e].[HmacSecretEncrypted], [e].[ManagerId], [e].[Name], [e].[PasswordHash], [e].[Salary], [e].[role]
+FROM [Employees] AS [e]
+WHERE [e].[ApiKey] = @__apiKey_0"
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Decrypting data using HMAC service.
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Verifying HMAC signature.
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Generating HMAC signature.
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Executing endpoint '"EmployeesController.GetEmployees (MyApi)"'
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Route matched with "{action = \"GetEmployees\", controller = \"Employees\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployees(MyApi.DTO.Employee.EmployeeQueryDto)" on controller "EmployeesController" ("MyApi").
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] GetEmployees called (search=null, departmentId=null, minSalary=null, page=1, pageSize=20, sortBy=null, desc=False).
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Fetching employees with query (search=null, departmentId=null, minSalary=null, page=1, pageSize=20, sortBy=null, desc=False).
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Building employee queryable in repository.
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Employees] AS [e]"
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Executed DbCommand ("14"ms) [Parameters=["@__p_0='0', @__p_1='20'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Name], [t].[Email], [d].[Name] AS [DepartmentName], [t].[Salary], [e0].[Name] AS [ManagerName]
+FROM (
+    SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[ManagerId], [e].[Name], [e].[Salary]
+    FROM [Employees] AS [e]
+    ORDER BY [e].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Departments] AS [d] ON [t].[DepartmentId] = [d].[Id]
+LEFT JOIN [Employees] AS [e0] ON [t].[ManagerId] = [e0].[Id]
+ORDER BY [t].[Id]"
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Employee query completed with 12 results out of 12.
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType16`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[MyApi.DTO.Employee.Reademployeedto, MyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Executed action "EmployeesController.GetEmployees (MyApi)" in 474.4592ms
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Executed endpoint '"EmployeesController.GetEmployees (MyApi)"'
+2026-03-26 11:06:46 [Information] [TraceId: 9d7b0b160db14ea9ea42eda3e55f9009] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/api/Employees""" - 200 null "application/json; charset=utf-8" 712.796ms
+2026-03-27 17:25:23 [Information] [TraceId: ] Server laptop-2j11tsn1:29452:fb3feb6e caught stopping signal...
+2026-03-27 17:25:23 [Information] [TraceId: ] Application is shutting down...
+2026-03-27 17:25:24 [Information] [TraceId: ] Server laptop-2j11tsn1:29452:fb3feb6e caught stopped signal...
+2026-03-27 17:25:24 [Information] [TraceId: ] Server laptop-2j11tsn1:29452:fb3feb6e All dispatchers stopped
+2026-03-27 17:25:24 [Information] [TraceId: ] Server laptop-2j11tsn1:29452:fb3feb6e successfully reported itself as stopped in 15.3443 ms
+2026-03-27 17:25:24 [Information] [TraceId: ] Server laptop-2j11tsn1:29452:fb3feb6e has been stopped in total 876.8607 ms
+2026-03-30 14:14:15 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-03-30 14:14:18 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-03-30 14:14:18 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-30 14:14:19 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-03-30 14:14:19 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-03-30 14:14:19 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-30 14:14:19 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-30 14:14:19 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-03-30 14:14:19 [Information] [TraceId: ] Hosting environment: "Development"
+2026-03-30 14:14:19 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-03-30 14:14:19 [Information] [TraceId: ] Server laptop-2j11tsn1:41304:54ee36e4 successfully announced in 277.7076 ms
+2026-03-30 14:14:19 [Information] [TraceId: ] Server laptop-2j11tsn1:41304:54ee36e4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-30 14:14:19 [Information] [TraceId: ] Server laptop-2j11tsn1:41304:54ee36e4 all the dispatchers started
+2026-08-02 17:14:21 [Information] [TraceId: ] Start installing Hangfire SQL objects...
+2026-08-02 17:14:23 [Information] [TraceId: ] Hangfire SQL objects installed.
+2026-08-02 17:14:23 [Information] [TraceId: ] User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-02 17:14:23 [Information] [TraceId: ] Creating key {bc4233b5-2b97-4648-a640-d24d81a4a475} with creation date 2026-08-02 11:44:23Z, activation date 2026-08-02 11:44:23Z, and expiration date 2026-10-31 11:44:23Z.
+2026-08-02 17:14:23 [Information] [TraceId: ] Writing data to file '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys\key-bc4233b5-2b97-4648-a640-d24d81a4a475.xml"'.
+2026-08-02 17:14:23 [Information] [TraceId: ] Now listening on: "http://localhost:5062"
+2026-08-02 17:14:23 [Information] [TraceId: ] Starting Hangfire Server using job storage: 'SQL Server: LAPTOP-2J11TSN1@employeeDb'
+2026-08-02 17:14:23 [Information] [TraceId: ] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-08-02 17:14:23 [Information] [TraceId: ] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-08-02 17:14:23 [Information] [TraceId: ] Application started. Press Ctrl+C to shut down.
+2026-08-02 17:14:23 [Information] [TraceId: ] Hosting environment: "Development"
+2026-08-02 17:14:23 [Information] [TraceId: ] Content root path: "C:\Users\HP\Desktop\asp.net\MyApi"
+2026-08-02 17:14:24 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:07498665 successfully announced in 199.7275 ms
+2026-08-02 17:14:24 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:07498665 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-08-02 17:14:24 [Information] [TraceId: ] 1 servers were removed due to timeout
+2026-08-02 17:14:24 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:07498665 all the dispatchers started
+2026-08-02 17:14:27 [Information] [TraceId: 13bd2db7e0ced825a4caea7bb60f0b44] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2026-08-02 17:14:27 [Warning] [TraceId: 13bd2db7e0ced825a4caea7bb60f0b44] Failed to determine the https port for redirect.
+2026-08-02 17:14:29 [Information] [TraceId: 13bd2db7e0ced825a4caea7bb60f0b44] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - 401 null null 1636.7488ms
+2026-08-02 17:14:29 [Information] [TraceId: 3b2f4dccba2bb0f059f37e7a0308d3d1] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/favicon.ico""" - null null
+2026-08-02 17:14:29 [Information] [TraceId: 3b2f4dccba2bb0f059f37e7a0308d3d1] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/favicon.ico""" - 401 null null 112.9335ms
+2026-08-02 17:15:59 [Information] [TraceId: 2f8033777347761fe593fdbdefa156da] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger""" - null null
+2026-08-02 17:15:59 [Information] [TraceId: 2f8033777347761fe593fdbdefa156da] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger""" - 301 null null 2.4392ms
+2026-08-02 17:15:59 [Information] [TraceId: 6671c0d03b0cb51772e900dbb724168e] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2026-08-02 17:15:59 [Information] [TraceId: 6671c0d03b0cb51772e900dbb724168e] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 240.1523ms
+2026-08-02 17:15:59 [Information] [TraceId: f840d3d3e5dea3ff5bb2ccac45d83912] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-bundle.js""" - null null
+2026-08-02 17:15:59 [Information] [TraceId: 23060c8f75e6978c644d2754dee3c110] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-standalone-preset.js""" - null null
+2026-08-02 17:15:59 [Information] [TraceId: badeb96d7fc49f6456a2e0a88591df7d] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - null null
+2026-08-02 17:15:59 [Information] [TraceId: 4739469e4d92c43c410812984416f1ff] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui.css""" - null null
+2026-08-02 17:15:59 [Information] [TraceId: badeb96d7fc49f6456a2e0a88591df7d] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/_framework/aspnetcore-browser-refresh.js""" - 200 14901 "application/javascript; charset=utf-8" 2.6466ms
+2026-08-02 17:15:59 [Information] [TraceId: 23060c8f75e6978c644d2754dee3c110] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2026-08-02 17:15:59 [Information] [TraceId: 4739469e4d92c43c410812984416f1ff] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2026-08-02 17:15:59 [Information] [TraceId: 23060c8f75e6978c644d2754dee3c110] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-standalone-preset.js""" - 200 230280 "text/javascript" 111.5832ms
+2026-08-02 17:15:59 [Information] [TraceId: 4739469e4d92c43c410812984416f1ff] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui.css""" - 200 152034 "text/css" 108.8879ms
+2026-08-02 17:15:59 [Information] [TraceId: f840d3d3e5dea3ff5bb2ccac45d83912] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2026-08-02 17:15:59 [Information] [TraceId: f840d3d3e5dea3ff5bb2ccac45d83912] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-bundle.js""" - 200 1456926 "text/javascript" 132.8493ms
+2026-08-02 17:15:59 [Information] [TraceId: a063fd6d4f7dede1b409711690038856] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2026-08-02 17:16:00 [Information] [TraceId: 48a0e8088a6fa0b6b6f2809fcd9b1fb1] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/favicon-32x32.png""" - null null
+2026-08-02 17:16:00 [Information] [TraceId: 48a0e8088a6fa0b6b6f2809fcd9b1fb1] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+2026-08-02 17:16:00 [Information] [TraceId: 48a0e8088a6fa0b6b6f2809fcd9b1fb1] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 1.0117ms
+2026-08-02 17:16:00 [Information] [TraceId: a063fd6d4f7dede1b409711690038856] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 228.5126ms
+2026-08-02 19:57:38 [Information] [TraceId: ] 1 servers were removed due to timeout
+2026-08-02 19:57:42 [Warning] [TraceId: ] Server laptop-2j11tsn1:51052:07498665 was considered dead by other servers, restarting...
+2026-08-02 19:57:42 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:07498665 caught restart signal...
+2026-08-02 19:57:42 [Warning] [TraceId: ] Server laptop-2j11tsn1:51052:07498665 stopped non-gracefully due to ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2026-08-02 19:57:43 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:07498665 successfully reported itself as stopped in 245.8815 ms
+2026-08-02 19:57:43 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:07498665 has been stopped in total 502.9593 ms
+2026-08-02 19:57:43 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:8e776fb1 successfully announced in 326.1171 ms
+2026-08-02 19:57:43 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:8e776fb1 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-08-02 19:57:45 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:8e776fb1 all the dispatchers started
+2026-08-02 22:53:30 [Warning] [TraceId: ] Stopping the server due to DomainUnload or ProcessExit event...
+2026-08-02 22:53:30 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:8e776fb1 caught stopping signal...
+2026-08-02 22:53:30 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:8e776fb1 caught stopped signal...
+2026-08-02 22:53:30 [Warning] [TraceId: ] Server laptop-2j11tsn1:51052:8e776fb1 caught shutdown signal...
+2026-08-02 22:53:30 [Warning] [TraceId: ] Server laptop-2j11tsn1:51052:8e776fb1 stopped non-gracefully due to ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2026-08-02 22:53:30 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:8e776fb1 successfully reported itself as stopped in 339.4401 ms
+2026-08-02 22:53:30 [Information] [TraceId: ] Server laptop-2j11tsn1:51052:8e776fb1 has been stopped in total 387.356 ms
